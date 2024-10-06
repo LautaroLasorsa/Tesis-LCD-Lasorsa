@@ -1,0 +1,9 @@
+*.ini
+figuras/*
+*__pycache__*
+*.log
+simulacion/src/*
+!*.cu
+!*.csv
+!*.cpp
+!*.hpp
