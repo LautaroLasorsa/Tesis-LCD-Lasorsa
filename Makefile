@@ -1,10 +1,6 @@
-FIGURA1=figura_1_dispersion_plot_completo
-FIGURA2=figura_2_violin_plot_completo
-FIGURA3=figura_3_mediciones_aproximadas_vs_ideal
-FIGURA4=figura_4_mediciones_aproximadas_vs_ideal_varianza
-FIGURA5=figura_5_dist_conjuntas_var_y_cgrupos
-
-LISTA_FIGURAS= $(FIGURA1) $(FIGURA2) $(FIGURA3) $(FIGURA4) $(FIGURA5)
+include Figuras.mk
+SCRIPTS := $(wildcard scripts/figura*.py)
+LISTA_FIGURAS= $(patsubst %.py, %, $(notdir $(SCRIPTS)))
 FIGURAS= $(addprefix figuras/,$(addsuffix .png,$(LISTA_FIGURAS)))
 
 show:
