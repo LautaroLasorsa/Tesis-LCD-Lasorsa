@@ -19,7 +19,7 @@ plt.title("Mediciones aproximadas vs ideales con distintas varianzas",fontsize=3
 plt.xticks(range(len(observaciones),0,-1), labels=[1000000//x for x in interes], rotation = 90, fontsize=12)
 plt.yticks(list(np.linspace(0,1,21)), minor=True)
 plt.yticks(list(np.linspace(0,1,11)))
-plt.legend(datos_varianzas['-1'].unique(), title = "Varianza de la \nNormal asociada", fontsize=18)
+plt.legend(datos_varianzas['-1'].unique(), title = "$\sigma^2$", fontsize=18)
 plt.grid(True,which="major",c="black", linewidth=1)
 plt.grid(True,which="minor", linestyle="--")
 # plt.show()
