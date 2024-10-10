@@ -19,6 +19,12 @@ figura: figuras/$(FIGURA$(FIGURA)).png
 clear-figuras:
 	rm -f figuras/*.png
 
+commit:
+	python3 clear.py
+	git add .
+	git commit -m "$(MENSAJE)"
+	git push
+
 # Regla para generar figuras a partir de scripts
 figuras/%.png: scripts/%.py scripts/general.py
 	@mkdir -p figuras  			 # Asegúrate de que la carpeta 'figuras' exista
