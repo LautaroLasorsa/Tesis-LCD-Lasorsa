@@ -7,3 +7,4 @@ simulacion/src/*
 !*.csv
 !*.cpp
 !*.hpp
+*.ico
