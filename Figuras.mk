@@ -12,3 +12,4 @@ FIGURA11=figura_11_lognormalidad_muestras
 FIGURA12=figura_12_pearson_hasta_100_grupos
 FIGURA13=figura_12_spearman_hasta_100_grupos
 FIGURA14=figura_14_correlacion_vs_100_empirica
+FIGURA15=figura_15_simulados_vs_100
