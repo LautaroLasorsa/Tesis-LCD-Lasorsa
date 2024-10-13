@@ -1,0 +1,403 @@
+\nonstopmode
+\documentclass[10pt,mathserif]{beamer}%fleqn
+\usepackage{amscd, amsthm,amssymb,latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+%\usepackage{beamerthemesplit}
+\usepackage{graphicx} 
+\usepackage{xcolor} 
+\usepackage{tikz} 
+\usepackage{transparent}
+\usepackage{diagbox}
+\usepackage{biblatex}
+\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{multicol}
+\addbibresource{optimal.bib} 
+\usepackage{url}
+\mode<presentation>{
+	\usecolortheme{}
+	\useinnertheme{}
+	\useoutertheme{}
+}
+
+%\usepackage{enumitem}
+%\setenumerate{itemsep=0.005ex,topsep=3pt}
+%\setitemize{itemsep=0.005ex,topsep=3pt}
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+
+\setbeamertemplate{headline}{}
+\beamertemplatenavigationsymbolsempty
+
+\newcommand{\nota}[1]{\color{red}{#1}\color{black}}
+
+\newcommand{\at}[2]{#1[#2]}
+\DeclareMathOperator{\icr}{\text{ICR}}
+\DeclareMathOperator{\Hi}{\text{H}}
+\DeclareMathOperator{\Di}{\text{D}}
+\DeclareMathOperator{\Pa}{\text{P}}
+\DeclareMathOperator{\rep}{\text{rep}}
+\DeclareMathOperator{\orbit}{\text{orbit}}
+\DeclareMathOperator{\nxt}{\text{R}}
+\DeclareMathOperator{\parent}{\text{parent}}
+\DeclareMathOperator{\dif}{\Delta}
+\DeclareMathOperator{\reps}{\mathbf{Reps}}
+
+\DeclareMathOperator{\expnxt}{\text{ER}}
+\DeclareMathOperator{\disc}{\text{discrepancia}}
+\begin{document}
+
+%\small
+
+\binoppenalty=10000 
+\relpenalty=10000
+\hyphenpenalty=5000
+\exhyphenpenalty=1000
+\newtheorem{conjecture}{Conjetura}
+
+
+\languagepath{spanish}
+\deftranslation[to=spanish]{Theorem}{Teorema}
+\deftranslation[to=spanish]{theorem}{teorema}
+\deftranslation[to=spanish]{Definition}{Definición}
+\deftranslation[to=spanish]{definition}{definición}
+\deftranslation[to=spanish]{Problem}{Problema}
+\deftranslation[to=spanish]{problem}{problema}
+\deftranslation[to=spanish]{Corollary}{Corolario}
+\deftranslation[to=spanish]{corollary}{corolario}
+\deftranslation[to=spanish]{Lemma}{Lema}
+\deftranslation[to=spanish]{lemma}{lema}
+\deftranslation[to=spanish]{Conjecture}{Conjetura}
+\deftranslation[to=spanish]{conjecture}{conjetura}
+
+
+
+\title{{\normalsize Tesis de Licenciatura en Ciencia de Datos (parcial)}
+\\\vspace*{2cm}
+\mbox{\Large Mejora en la medición del Bienestar Económico}}
+
+\author{\large Lautaro Lasorsa
+\\\vspace*{1cm}}
+
+
+\date{{\footnotesize
+\hspace*{-6cm}
+\begin{tabular}{l}
+Director: Rodrigo Castro \\
+Co-Director: Walter Sosa Escudero\\
+Facultad de Ciencias Exactas y Naturales\\
+ Universidad de Buenos Aires\\
+\end{tabular}
+}}
+
+\begin{frame}
+\maketitle
+\setcounter{framenumber}{0}
+\thispagestyle{empty}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Ingresos y Bienestar Económico}
+    \begin{definition}[Bienestar Económico]
+        Definimos como \textbf{Bienestar Económico} al bienestar o utilidad que un individuo obtiene de sus ingresos.
+    \end{definition}
+    \pause 
+    \begin{itemize}
+        \item $I\ =\ Ingresos$
+        \item $BE\ =\ Bienestar\ Económico$
+        \item $BE\ =\ log(I)$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Medición del Bienestar Econónomico}
+    Sean $X_1, X_2, \dots X_N$ los ingresos de los individuos (o familias) en una población:
+    \begin{itemize}
+        \item \textbf{Medición Actual}: 
+        $$ 
+        log(\frac{1}{N} * \sum_{i=0}^N X_i)
+        $$
+        Problema: El logaritmo del promedio no es el promedio de los logaritmos.
+        \pause
+        \item \textbf{Medición Ideal (propuesta)}:
+        $$
+        \frac{1}{N} * \sum_{i=0}^N log(X_i)
+        $$
+        Problema: Es muy díficil saber los ingresos de absolutamente cada individuo.
+        \pause
+        \item \textbf{Medición Aproximada (propuesta)}:
+        $$
+        \frac{1}{G} * \sum_{i=0}^G log(\frac{1}{T} \sum_{j = 0}^{T} X_{i*T+j})
+        $$
+        Teniendo $N = G * T$, $G, T \in Z$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Expectativas}
+    \begin{definition}[Granularidad]
+        La \textbf{Granularidad} de una medición aproximada es la cantidad de grupos que utiliza, $G$.
+        Cada grupo contendrá $N/G = T$ individuos.
+    \end{definition}
+
+    Espero que:
+    \pause
+    \begin{enumerate}
+        \item Una medición con mayor granularidad se parezca más a una medición ideal. 
+        \pause
+        \item El parecido entre mediciones con distinta granularidad dependa de la distribución del ingreso.
+        \pause 
+        \item Una medición con mayor granularidad sea mejor que una medición con menor granularidad para predecir otras variables.
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Partes de la tésis}
+    \begin{enumerate}
+        \item \textbf{Datos sinteticos}: Generar datos sinteticos y ver cómo se comportan los primeros dos supuestos.
+        \item \textbf{Datos reales de ingreso}: Evaluar los primeros dos supuestos sobre datos reales y comparar los resultados con lo obtenido en los datos sinteticos.
+        \item \textbf{Predicción empirica}: Evaluar si la medición propuesta mejora la capacidad de predecir otras variables empiricas que \textbf{presumo} están relacionadas al bienestar ecónomico.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ Generación de datos sinteticos }
+    \begin{lemma}
+        Sean $X_1 \dots X_N$ los ingresos de los individuos (o familias):
+        $$X_i \sim LN(\mu,\sigma^2)$$ 
+        $$ log(X_i) \sim N(\mu, \sigma^2)$$
+        Es decir, los ingresos siguen una distribucion log-normal (LN) de parametros $\mu$ y $\sigma^2$
+    \end{lemma}
+    
+    Se generarón 2 datasets sinteticos utilizando CUDA para paralelizar los computos.
+
+    En ambos se simularon poblaciones con $N\ =\ 1\ 000\ 000$ y se hicieron las mediciones parciales para todas las granularidades posibles (incluyen $G=N$ y $G=1$)
+
+    \begin{itemize}
+        \item Un dataset contiene $20\ 000$ poblaciones con distribución $LN(0,1)$
+        \item El otro dataset contiene $1 000$ poblaciones con distribución $LN(0, \sigma^2)$ con $\sigma^2$ tomando los valores $1, 2, 3, 4, 5, 6, 7, 8, 9, 10$. En total contiene $10\ 000$ observaciones. 
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0,1)$}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            En este gráfico podemos ver que cada población es un punto en cada valor del eje X, que son las distintas granularidades. En efecto, podemos pensar que el tomar todas las mediciones parciales sobre una población genera un punto en $R^+^{|G|}$
+
+            Como algunos hay valores negativos (recordar que la medición ideal es $\hat{\mu}$ y $\mu=0$), para mejorar la visualización se le restó a todos los puntos el menor valor en eje Y entre todos los puntos.
+
+            Se puede ver que entre 100 y 200 grupos se alcanzán una distribución dificilmente distinguible de la ideal, mientras que para granularidades menores se nota una diferencia de ordenes de magnitud
+
+        \end{minipage}
+
+        \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[width=\linewidth ]{../figuras/figura_1_dispersion_plot_completo.png} % Ajusta la ruta de la imagen
+        %    \captionof{figure}{Descripción del gráfico}
+        \end{minipage}
+
+    \end{multicols}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0,1)$}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            Podemos ver los mismos datos pero utilizando un violiplot y teniendo marcados los cuartiles de la distribución.
+
+        \end{minipage}
+
+        \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[width=\linewidth ]{../figuras/figura_2_violin_plot_completo.png} % Ajusta la ruta de la imagen
+        %    \captionof{figure}{Descripción del gráfico}
+        \end{minipage}
+
+    \end{multicols}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0,1)$: Correlación}
+    En el siguiente gráfico podemos ver que, consistentemente con lo observado en los gráficos anteriores, aumentar la granularidad aumenta la correlación con la medición ideal
+    \begin{definition}[$BE_G$]
+        $$ BE_G(X) = \frac{1}{G} * \sum_{i=0}^G log(\frac{1}{T} \sum_{j = 0}^{T} X_{i*T+j}) $$
+        $$ T = N/G$$
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0,1)$: Correlación}
+    \begin{conjecture}
+        $$i>j \implies Corr(BE_i,BE_N) > Corr(BE_j,BE_N)$$ 
+    \end{conjecture}
+    \pause
+    \textbf{Verosimil}
+    \includegraphics[width=\linewidth ]{../figuras/figura_3_mediciones_aproximadas_vs_ideal.png} % Ajusta la ruta de la imagen
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0,\sigma^2)$: Correlación condicional}
+    Podemos ver como el aumentar $\sigma^2$ deteriora la capacidad predicitva y nos obliga a utilizar una mayor granularidad.
+
+    También podemos ver que llegando a 100 grupos (\textbf{percentiles}) la correlación es razonablemente alta para todos los $\sigma^2$ evaluados.
+
+    Seber esto es importante para la parte empirica porque nos índica que tan bien aproximamos la medición ideal cuando utilizamos datos con menor granularidad.
+
+    \includegraphics[width=\linewidth ]{../figuras/figura_4_mediciones_aproximadas_vs_ideal_varianza.png} % Ajusta la ruta de la imagen
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0, \sigma^2)$: Correlación condicional}
+    \begin{conjeture}
+    \textbf{Dados: } $X \sim LN(0,\sigma_X^2) \times N$ , $Y \sim LN(0,\sigma_Y^2) \times N$ y $\sigma_X^2 < \sigma_Y^2$
+    \textbf{Entonces:} $$ Corr_X(BE_i,BE_j) > Corr_Y(BE_i,BE_j)$$
+    \end{conjeture}
+    \pause
+    \textbf{Inverosimil}
+    \includegraphics[width=\linewidth ]{../figuras/figura_12_pearson_hasta_100_grupos.png} % Ajusta la ruta de la imagen
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos $LN(0, \sigma^2)$: Correlación no condicional}
+    Hemos observado como se comporta la correlación para distintos valores de $\sigma^2$, pero hasta ahora siempre condicionando justamente al valor $\sigma^2$
+    Sin embargo, podemos preguntarnos, ya que creamos datos con distintos valores de $\sigma^2$.
+    \textbf{¿Qué pasa si utilizamos todas las observaciones como una sola población?}
+    \pause
+
+    (Prestar mucha atención al eje Y)
+    
+    \includegraphics[width=\linewidth ]{../figuras/figura_15_simulados_vs_100.png} % Ajusta la ruta de la imagen
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos reales}
+    Los datos fueron obtenidos del Banco Mundial, y tienen una precisión a nivel de percentil.
+    \begin{itemize}
+        \item No hay disponibles para todos los países todos los años.
+        \item Se obtienen de los institutos de estadisticas de cada país.
+        \item Hay distintos niveles de alcance: \textbf{Nacional}, \textbf{Urbano} y \textbf{Rural}. Solo usaremos datos de nivel \textbf{Nacional}
+        \item Hay dos tipos de encuestas: \textbf{Consumo} e \textbf{Ingresos}. Estas son metodologicámente incompatibles y deben utilizarse de forma separada.
+        \item Hare todos los análisis en paralelo para ambos tipos de encuestas. 
+    \end{itemize}
+    \includegraphics[width=\linewidth ]{../figuras/figura_10_disponibilidad_datos.png} % Ajusta la ruta de la imagen    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos reales: Correlación (no condicional)}
+    Si proponemos reemplazar una medición ya existente ($BE_1$) con una nueva ($BE_{100}$), es importante preguntarnos qué tanto se parecen esas 2 mediciones.
+    
+    \pause
+
+    \textbf{Se parecen mucho}
+
+    \includegraphics[width=\linewidth ]{../figuras/figura_16_empiricos_vs_simulados_sin_discriminar_varianza.png} % Ajusta la ruta de la imagen    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Datos reales: Esperanza de Vida al Nacer}
+    \begin{definition}[Esperanza de Vida al Nacer (EVN)]
+        Es la longitud esperada de la vida al nacer. 
+        Se calcula como la edad promedio de muerte en ese año.
+    \end{definition}
+
+    La EVN es una variable socioeconómica importante que es razonable suponer que está vinculada con el bienestar ecónomico de la sociedad.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Esperanza de Vida al Nacer: Mejora de la capacidad predictiva}
+    \textbf{Metodlogía}
+    \begin{itemize}
+        \item Se controlará por año (dado que correlaciona tanto con los ingresos como con la esperanza de vida)
+        \item Dentro de cada año se utilizarán las mediciones con distinta granularidad como variables predictoras de la esperanza de vida.
+        \item Se utilizarán correlaciones de Pearson y Spearman para capturar efectos lineales y no lineales
+        \item Se evaluarán por separado las muestras de \textbf{ingresos} y \textbf{consumo}
+        \item Solo se tendrán en cuenta en cada caso los años donde haya datos de al menos 30 países.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{EVN: Resultados}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
+                \item Los ingresos son mejores predictores que el consumo.
+                \item Utilizando ingresos no hay ganancias significativas (y a veces perdidas) aumentando la granularidad.
+                \item Utilizando consumo hay una mejora significativa al usar quintiles, pero luego no hay más mejora.
+                \item La capacidad predictiva varía mucho entre los distintos años.
+            \end{itemize}\end{minipage}
+        \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[width=\linewidth ]{../figuras/figura_6_pearson_ingreso_consumo_esp_vida_total.png} % Ajusta la ruta de la imagen
+        %    \captionof{figure}{Descripción del gráfico}
+        \end{minipage}
+
+    \end{multicols}
+\end{frame}
+
+\begin{frame}
+    \frametitle{EVN: Remuestreo}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
+                \item Para cada año, se utilizó bootstrap no parametrico (remuestreo) para estimar la distribución de la correlación las mediciones del bienestar ecónomico y la EVN.
+            
+                \item El sombreado refleja el rango intercuartilico. 
+
+                \item Las conclusiones que podemos alcanzar son similares que con el gráfico anterior.
+            \end{itemize}\end{minipage}
+        \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[width=\linewidth ]{../figuras/figura_7_pearson_ingreso_consumo_esp_vida_total_bootstrap.png} % Ajusta la ruta de la imagen
+        %    \captionof{figure}{Descripción del gráfico}
+        \end{minipage}
+
+    \end{multicols}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{EVN: Correlación no lineal}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
+                \item Se repitió el experimento anterior con metricas de correlación no líneal.
+                \item Se mantienen a grandes razgos las conclusiones anteriores.
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}{\linewidth}
+            \centering
+            \includegraphics[width=\linewidth ]{../figuras/figura_8_ingresos_evn_no_lineal.png} % Ajusta la ruta de la imagen
+        %    \captionof{figure}{Descripción del gráfico}
+        \end{minipage}
+
+    \end{multicols}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{¡Fin!}
+\begin{center}
+{\Huge ¿Preguntas?}
+
+\end{center}
+\end{frame}
+
+
+%\scriptsize
+%\begin{frame}{Referencias}
+%    \printbibliography
+%\end{frame}
+\end{document}
+
+

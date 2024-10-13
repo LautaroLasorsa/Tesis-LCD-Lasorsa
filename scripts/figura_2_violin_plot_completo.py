@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 datos = pd.read_csv('../datos simulados/datos.csv')
 columnas = [str(1000000//int(x)) for x in datos.columns]
 y = list(zip(*datos.iloc))
-
-y = [np.array(yi) for yi in y]
+ymin = min([min(yy) for yy in y])
+y = [np.array(yi)-ymin for yi in y]
 quants = (0.25,0.5,0.75)
 quantiles = [ [np.quantile(yi,q=quant) for yi in y] for quant in quants]
 

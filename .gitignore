@@ -3,6 +3,9 @@ figuras/*
 *__pycache__*
 *.log
 simulacion/src/*
+presentacion_parcial/*
+!presentacion_parcial/presentacion_parcial.tex
+!presentacion_parcial/optimal.bib
 !*.cu
 !*.csv
 !*.cpp

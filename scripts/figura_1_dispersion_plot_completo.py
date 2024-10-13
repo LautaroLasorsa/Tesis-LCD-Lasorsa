@@ -3,11 +3,11 @@ from general import *
 datos = pd.read_csv('../datos simulados/datos.csv')
 columnas = [str(1000000//int(x)) for x in datos.columns]
 y = list(zip(*datos.iloc))
-
+ymin = min([min(yy) for yy in y])
 y2 = []
 x2 = []
 for (yy,xx) in zip(y, columnas):
-    y2.extend(yy)
+    y2.extend([yi - ymin for yi in yy])
     x2.extend([xx]*len(yy))
 
 import matplotlib.ticker as ticker
