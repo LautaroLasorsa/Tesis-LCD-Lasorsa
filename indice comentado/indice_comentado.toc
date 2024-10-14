@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1.}Medición del Bienestar Ecónomico}{1}{}%
+\contentsline {section}{\numberline {1.1}Definición y motivación}{1}{}%
+\contentsline {section}{\numberline {1.2}Medición actual}{1}{}%
+\contentsline {section}{\numberline {1.3}Propuesta de mejora: Medición ideal}{1}{}%
+\contentsline {section}{\numberline {1.4}Propuesta de mejora: Mediciones aproximadas}{1}{}%
+\contentsline {section}{\numberline {1.5}Infancia y juventud}{1}{}%
+\contentsline {section}{\numberline {1.6}Rescate de la princesa}{1}{}%
+\contentsline {section}{\numberline {1.7}Sacrificio y victoria}{2}{}%
+\contentsline {chapter}{\numberline {2.}El imperio contraataca}{3}{}%
+\contentsline {chapter}{\numberline {3.}El regreso del Jedi}{5}{}%

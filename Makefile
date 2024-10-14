@@ -9,6 +9,10 @@ show:
 todo: tesis.pdf presentacion_parcial.pdf
 
 
+indice_comentado.pdf: indice\ comentado/*.tex
+	- cd "indice comentado" && lualatex indice_comentado.tex
+	mv "indice comentado"/indice_comentado.pdf indice_comentado.pdf
+
 presentacion_parcial.pdf: presentacion_parcial/*.tex $(FIGURAS) 
 	- cd presentacion_parcial && lualatex presentacion_parcial.tex
 	mv presentacion_parcial/presentacion_parcial.pdf presentacion_parcial.pdf 

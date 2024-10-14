@@ -2,6 +2,7 @@
 figuras/*
 *__pycache__*
 *.log
+simulacion/build/*
 simulacion/src/*
 presentacion_parcial/*
 !presentacion_parcial/presentacion_parcial.tex
@@ -11,3 +12,4 @@ presentacion_parcial/*
 !*.cpp
 !*.hpp
 *.ico
+.vscode/*
