@@ -62,6 +62,22 @@ En esta sección comentaremos cuál es la que proponemos como la forma ideal de 
 En esta sección introducimos el concepto de granularidad de una medición, y estudiamos soluciones de compromiso para crear una medición que se aproxima más a la que proponemos como medición ideal pero siendo logisticamente factibles.
 Serán las mediciones que utilizaremos con los datos empiricos.
 
+\chapter{Técnicas a utilizar}
+
+En este cápitulo se explicarán brevemente las metricas y técnicas más importantes a utilizar en la presente tésis.
+
+\section{Correlación de Pearson}
+
+Coeficiente clásico de correlación líneal
+
+\section{Correlaciones no lineales}
+
+Coeficientes de correlación de Spearman y $\tau$ de Kendall.
+
+\section{Bootstrap}
+
+Técnica de remuestreo para estimar la distribución de los datos o de una función de los datos.
+
 \chapter{Datos sinteticos}
 
 En este cápitulo se utilizán datos simulados para explorar caracteristicas de los índicadores (existentes y propuestos) en sí mismos.
@@ -71,11 +87,23 @@ En esta sección se comentará qué datos sinteticos se generaron, que asuncione
 
 \section{Datos $LN(0,1)$}
 
-En esta sección se analizán los datos generados utilizando que los ingresos de una población siguen una distribución $LogNormal(0,1)$.
+En esta sección se analizán los datos generados utilizando que los ingresos de una población siguen una distribución $LogNormal(0,1)$. Se estudiará las distribuciones de las mediciones con distinta granularidad así como la correlación entre las mismas.
 
 \section{Datos $LN(0,\sigma^2)$}
 
 En esta sección se analizán los datos generados utilizando una distribución $LogNormal(0,\sigma^2)$ para distintos valores de $\sigma^2$. Trabajar con distintos valores de $\sigma^2$ permite una mayor variedad y riqueza de análisis.
+
+\subsection{Comportamiento condicional}
+
+Se estudia el comportamiento condicional a $\sigma^2$, tratandolo como 10 poblaciones independientes y estudiandolas.
+
+\subsection{Interacción con granularidad}
+
+Se estudia como se comportan las mediciones con distintas granularidades al modificar $\sigma^2$
+
+\subsection{Comportamiento no condicional}
+
+Se trabajará con toda la muestra sin condicionar por $\sigma^2$, es decir tratandola como una unica población heterogenea.
 
 \chapter{Datos reales: Distribución de los ingresos}
 
@@ -87,7 +115,7 @@ Se presenta la base de datos disponible. Se comentan los distintos alcances (nac
 
 \section{Distribución empirica}
 
-Se estudian las distribuciones empiricas disponibles y se las compara con los datos sinteticos generados en el cápitulo anterior. Como el año es una variable importante para utilizar como variable de control, se estudiará la distribución condicional de los datos al año.
+Se estudian las distribuciones empiricas disponibles y se las compara con los datos sinteticos generados en el cápitulo anterior.
 
 \chapter{Datos reales: Mejora de la capacidad predictiva}
 
@@ -95,11 +123,14 @@ En este cápitulo exploramos si las modificaciones propuestas en la medición de
 
 \section{Esperanza de Vida al Nacer (EVN)}
 
-Se estudia pormenorizadamente el caso de la EVN, discutiendo distintas formas de evaluar la capacidad predictiva de las distintas mediciones. Se incluye el uso de bootstrap no parametrico para estimar la distribución de la correlación condicional (al año) entre las medidas con distinta granularidad y la EVN, siendo esta la metrica más madura y que se generalizará a otras variables socio economicas.
+Se estudia pormenorizadamente el caso de la EVN, discutiendo distintas formas de evaluar la capacidad predictiva de las distintas mediciones. Se utiliza el año como variable de control para evitar que una correlación entre el bienestar economico y el año y entre el año y la EVN aumente artificialmente la correlación entre el bienestar economico y la EVN.
+
 
 \section{Otros indicadores}
 
-Utitizando la metrica comparativa finalmente desarrollada para el caso de la EVN, se aplica la misma metrica a otros indicadores socio economicos (ej: Alfabetización a los 15 años) para ver cómo se comportan es estos casos
+Utitizando la metrica comparativa finalmente desarrollada para el caso de la EVN, se aplica la misma metrica a otros indicadores socio economicos (ej: Alfabetización a los 15 años) para ver cómo se comportan es estos casos.
+
+
 
 \chapter{Conclusiones}
 
