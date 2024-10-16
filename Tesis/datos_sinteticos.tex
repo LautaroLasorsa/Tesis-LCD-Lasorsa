@@ -1,0 +1,69 @@
+\chapter{Datos sinteticos}
+
+En este cápitulo se utilizán datos simulados para explorar caracteristicas de los índicadores (existentes y propuestos) en sí mismos.
+
+\section{Generación}
+
+Para la generación de los datos se modela la distribución del ingreso en una sociedad como $logNorm(\mu,\sigma^2)$, basandonos en (Gibrat, 1931)\cite{gibrat1931inégalités}. Es decir, sea $X$ una población con $N$ individuos cuyos ingresos son $X_1, X_2, \dots, X_N$, las variables $X_i$ son IID (independientes e identicamente distribuidas) y $X_i \sim LN(\mu, \sigma^2)$.
+
+Recordar que 
+
+$$
+    X \sim LN(\mu, \sigma^2) \iff log(X) \sim N(\mu,\sigma^2)
+$$
+
+Notar que bajo esta distribución:
+
+\begin{itemize}
+    \item El bienestar económico tiene distribución normal $N(\mu,\sigma^2)$
+    \item $BE_N(X)$ es un estimador insesgado de $\mu$
+\end{itemize}
+
+La metodología consistio en lo siguiente:
+
+\begin{itemize}
+    \item Genarar poblaciones con $N = 1.000.000$ individuos cada una.
+    \item Ordenar a los individuos de la población, en orden creciente de ingresos.
+    \item Para cada población $X^i$ y para divisor $G$ de $N$, calcular $BE_G(X^i)$
+    \item Almacenar para posteriro uso los valores $BE_j^i = BE_{G_j}(X^i)$
+\end{itemize}
+
+Notar que todas las observaciones y todas las poblaciones generadas son independientes entre si.
+
+Como modificar $\mu$ es lo mismo que multiplicar a todos los $X_i$ por $e^{\Delta \mu}$, utilizaremos $\mu = 0$ para la generación de datos sinteticos.
+
+Respecto del valor de $\sigma^2$, se generaron 2 datasets:
+
+\begin{itemize}
+    \item \textbf{Datos $LN(0,1)$}: Un dataset donde $X_i \sim LN(0,1)$, para el que se simularon contiene $20.000$ poblaciones
+    \item \textbf{Datos $LN(0,\sigma^2)$}: Un dataset donde se toman diversos valores de $\sigma^2$, en el cuál se simularon $1.000$ poblaciones para cada valor entero de $\sigma^2$ entre 1 y 10, generando $10.000$ poblaciones en total.
+\end{itemize}
+
+La generación de datos se paralelizo utilizando GPU mediante CUDA\cite{lasorsa2024simluacion_cuda}.
+
+\section{Datos $LN(0,1)$}
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_1_dispersion_plot_completo.png} % Cambia el nombre del archivo
+    \caption{Distribución de $BE_j^i$, donde el eje X es la granularidad (cantidad de grupos) de la medición. Para facilitar la visualización, a cada elemento se le resto el mínimo de todo el dataset}
+    \label{fig:figura_1} % Etiqueta para referenciar
+\end{figure}
+
+Como puede verse en \ref{fig:figura_1}, al tener más de 200 grupos es dificil distinguir las distintas distribuciones, inclusive en escala logaritmica.   
+
+\section{Datos $LN(0,\sigma^2)$}
+
+En esta sección se analizán los datos generados utilizando una distribución $LogNormal(0,\sigma^2)$ para distintos valores de $\sigma^2$. Trabajar con distintos valores de $\sigma^2$ permite una mayor variedad y riqueza de análisis.
+
+\subsection{Comportamiento condicional}
+
+Se estudia el comportamiento condicional a $\sigma^2$, tratandolo como 10 poblaciones independientes y estudiandolas.
+
+\subsection{Interacción con granularidad}
+
+Se estudia como se comportan las mediciones con distintas granularidades al modificar $\sigma^2$
+
+\subsection{Comportamiento no condicional}
+
+Se trabajará con toda la muestra sin condicionar por $\sigma^2$, es decir tratandola como una unica población heterogenea.

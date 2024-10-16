@@ -19,8 +19,10 @@ presentacion_parcial.pdf: presentacion_parcial/*.tex $(FIGURAS)
 
 # Regla para generar el PDF de la tesis
 tesis.pdf: Tesis/*.tex Tesis/logofcen.pdf Tesis/tesis.bib Tesis/tesis.cls $(FIGURAS)
-	- cd Tesis && lualatex tesis.tex
+	- rm Tesis/tesis.bbl Tesis/tesis.blg Tesis/tesis.aux
+	- cd Tesis && lualatex tesis.tex && bibtex tesis.aux && lualatex tesis.tex && lualatex tesis.tex
 	mv Tesis/tesis.pdf tesis.pdf
+	
 
 # Regla para construir todas las figuras
 figuras: $(FIGURAS)

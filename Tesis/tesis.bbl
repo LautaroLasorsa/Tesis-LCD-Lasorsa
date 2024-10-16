@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{undp2023tech_notes}
+United Nations~Development Programme.
+\newblock Technical notes: Human development report 2023/24.
+\newblock Technical report, United Nations Development Programme (UNDP), 2023.
+\newblock Accessed: 2024-10-11,
+  \url{https://hdr.undp.org/sites/default/files/2023-24_HDR/hdr2023-24_technical_notes.pdf}.
+
+\bibitem{gibrat1931inégalités}
+R.~Gibrat.
+\newblock {\em Les in{\'e}galit{\'e}s {\'e}conomiques}.
+\newblock Sirey, 1931.
+
+\bibitem{lasorsa2024simluacion_cuda}
+Lautaro Lasorsa.
+\newblock Códigos para la generación de datos simulados, 2024.
+\newblock
+  \url{https://gist.github.com/LautaroLasorsa/739dae8ec5f9041f243150183070815a}.
+
+\end{thebibliography}

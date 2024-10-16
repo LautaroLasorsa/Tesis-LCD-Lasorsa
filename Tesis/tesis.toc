@@ -1,33 +1,38 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1.}Medición del Bienestar Ecónomico}{1}{}%
-\contentsline {section}{\numberline {1.1}Definición y motivación}{1}{}%
-\contentsline {subsection}{\numberline {1.1.1}Definición}{1}{}%
-\contentsline {subsection}{\numberline {1.1.2}Motivación}{1}{}%
-\contentsline {section}{\numberline {1.2}Medición actual}{2}{}%
-\contentsline {subsection}{\numberline {1.2.1}Metodología}{2}{}%
-\contentsline {subsection}{\numberline {1.2.2}Ventajas}{2}{}%
-\contentsline {subsection}{\numberline {1.2.3}Desventajas}{4}{}%
-\contentsline {section}{\numberline {1.3}Propuesta de mejora: Medición ideal}{4}{}%
-\contentsline {subsection}{\numberline {1.3.1}Ventajas}{4}{}%
-\contentsline {subsection}{\numberline {1.3.2}Desventajas}{5}{}%
-\contentsline {section}{\numberline {1.4}Propuesta de mejora: Mediciones aproximadas}{5}{}%
-\contentsline {chapter}{\numberline {2.}Técnicas a utilizar}{6}{}%
-\contentsline {section}{\numberline {2.1}Correlación de Pearson}{6}{}%
-\contentsline {section}{\numberline {2.2}Correlaciones no lineales}{6}{}%
-\contentsline {section}{\numberline {2.3}Bootstrap}{6}{}%
-\contentsline {chapter}{\numberline {3.}Datos sinteticos}{7}{}%
-\contentsline {section}{\numberline {3.1}Generación}{7}{}%
-\contentsline {section}{\numberline {3.2}Datos $LN(0,1)$}{7}{}%
-\contentsline {section}{\numberline {3.3}Datos $LN(0,\sigma ^2)$}{7}{}%
-\contentsline {subsection}{\numberline {3.3.1}Comportamiento condicional}{7}{}%
-\contentsline {subsection}{\numberline {3.3.2}Interacción con granularidad}{7}{}%
-\contentsline {subsection}{\numberline {3.3.3}Comportamiento no condicional}{7}{}%
-\contentsline {chapter}{\numberline {4.}Datos reales: Distribución de los ingresos}{8}{}%
-\contentsline {section}{\numberline {4.1}Datos disponibles}{8}{}%
-\contentsline {section}{\numberline {4.2}Distribución empirica}{8}{}%
-\contentsline {chapter}{\numberline {5.}Datos reales: Mejora de la capacidad predictiva}{9}{}%
-\contentsline {section}{\numberline {5.1}Esperanza de Vida al Nacer (EVN)}{9}{}%
-\contentsline {section}{\numberline {5.2}Otros indicadores}{9}{}%
-\contentsline {chapter}{\numberline {6.}Conclusiones}{10}{}%
-\contentsline {chapter}{\numberline {7.}Posibles trabajos futuros}{11}{}%
-\contentsline {chapter}{\numberline {8.}Citas bibliograficas}{12}{}%
+\contentsline {chapter}{\numberline {1.}Medición del Bienestar Ecónomico}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definición y motivación}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Definición}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Motivación}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Medición actual}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Metodología}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Ventajas}{2}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Desventajas}{4}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Propuesta de mejora: Medición ideal}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Metodología}{4}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Ventajas}{4}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Desventajas}{5}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Propuesta de mejora: Mediciones aproximadas}{5}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Metodología}{5}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Ventajas}{5}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Desventajas}{5}{subsection.1.4.3}%
+\contentsline {chapter}{\numberline {2.}Técnicas a utilizar}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Correlación de Pearson}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Correlaciones no lineales}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Correlación de Spearman}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}$\tau $ de Kendall}{7}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Bootstrap}{7}{section.2.3}%
+\contentsline {chapter}{\numberline {3.}Datos sinteticos}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Generación}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Datos $LN(0,1)$}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Datos $LN(0,\sigma ^2)$}{10}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Comportamiento condicional}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Interacción con granularidad}{10}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Comportamiento no condicional}{10}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4.}Datos reales: Distribución de los ingresos}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Datos disponibles}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Distribución empirica}{11}{section.4.2}%
+\contentsline {chapter}{\numberline {5.}Datos reales: Mejora de la capacidad predictiva}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Esperanza de Vida al Nacer (EVN)}{12}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Otros indicadores}{12}{section.5.2}%
+\contentsline {chapter}{\numberline {6.}Conclusiones}{13}{chapter.6}%
+\contentsline {chapter}{\numberline {7.}Posibles trabajos futuros}{14}{chapter.7}%

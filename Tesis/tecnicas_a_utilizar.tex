@@ -1,0 +1,71 @@
+\chapter{Técnicas a utilizar}
+
+En este cápitulo se explicarán las técnicas que se utilizarán a lo largo del trabajo para analizar los datos, tanto sinteticos como reales, y obtener conclusiones de los mismos.
+
+\section{Correlación de Pearson}
+
+El coeficiente de correlación de Pearson se utiliza para medir la similitud líneal entre 2 variables. Se define como:
+
+$$
+    r(X,Y) = \frac{Cov(X,Y)}{\sigma_X * \sigma_Y}
+$$
+
+Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_Y$ son los desvios estandar de las mismas. Este indicador tiene varias propiedades interesantes:
+
+\begin{itemize}
+    \item Si planteamos el modelo $Y = \alpha * X + \beta$, para los valores $\alpha*$ y $\beta*$ que minimizan el MSE (Mean Square Error):
+        \begin{itemize}
+            \item $$ R^2 = \frac{\sum_{i=1}^{N} (Y_i - X_i * \alpha* + \beta)^2} {\sum_{i=1}^{N} (Y_i - \mu_Y)^2} $$
+            \item $$ R^2 = (r(X,Y))^2 $$
+        \end{itemize}
+
+        Es decir, captura la capacidad predictiva (en sentido estadistico) del modelo líneal $Y = \alpha * X + \beta$
+    \item Podemos tratar a $L^2$ (variables aleatorias con segundo momento finito) como un espacio vectorial euclideo donde:
+        \begin{itemize}
+            \item $Cov(X,Y)$ es el producto interno entre $X$ e $Y$
+            \item $Var(X) = Cov(X,X)$ es la norma cuadrada de $X$. Analogamente, $std(X) = \sigma_X = ||X||$
+            \item $ r(X,Y) = \frac{<X,Y>}{||X|| * ||Y||} $ es el coseno del angulo entre $X$ e $Y$.
+        \end{itemize}
+
+        Esto reafirma su interpretación como medida de similitud entre las variables.
+\end{itemize}
+
+
+\section{Correlaciones no lineales}
+
+Notar que la correlación de Pearson solo captura relaciones líneales entre las variables, y si quieremos capturar otras posibles relaciones (por ejemplo, $Y = log(X)$) corresponde utilizar otras metricas, como son la correlación de Spearman y la $\tau$ de Kendall.
+
+\subsection{Correlación de Spearman}
+
+Sea $rank_X[x]$ la función que dado un individuo nos dice su índice en la población ordenada,
+
+$$
+    Spearman(X,Y) = 1 - \frac{6}{N*(N^2-1)} * \sum_{i=1}^N (rank_X[X_i]-rank_Y[Y_i])^2
+$$
+
+\subsection{$\tau$ de Kendall}
+
+$$
+    \tau(X,Y) = \frac{2}{N*(N-1)} * ( P_C - P_D )
+$$
+
+Donde 
+
+\begin{itemize}
+    \item $P_C = ||{(i,j)| i<j \wedge ( (X_i < X_j) \wedge (Y_i < Y_j) \vee (X_i > X_j) \wedge (Y_i > Y_j))}||$ son los pares que tienen la misma relación ordinal en $X$ y en $Y$.
+    \item $P_D = ||{(i,j)| i<j \wedge ( (X_i < X_j) \wedge (Y_i > Y_j) \vee (X_i > X_j) \wedge (Y_i < Y_j))}||$ son los pares que tienen distinta relación ordinal en $X$ que en $Y$.
+\end{itemize}
+
+Una forma alternativa de escribirla es:
+
+$$
+    \tau(X,Y) = \frac{2}{N*(N-1)} * \sum_{i=1}^{N} * \sum_{j=1}^{i-1} (signo(X_i-X_j) * signo(Y_i-Y_j))
+$$
+
+\section{Bootstrap}
+
+Bootstrap es una tecnica que consiste en utilizar los datos de una muestra para estimar la distribución de la misma, en base a esa estimación generar datos sinteticos y estudiar sobre esos datos sinteticos la distribución del indicador de interes.
+
+En el caso de este trabajo se utilizará bootstrap no parametrico de la siguiente forma:
+
+Dada una muestra $M$ de $N$ individuos $M_1, M_2, \dots, M_N$, una nueva muestra se generará tomando $N$ elementos de $M$ con reposición (es decir, al seleccionar un elemento de $M$ para incluirlo en nuestra nueva muestra, no lo eliminamos de $M$), y aplicamos el índicador (por ejemplo, la correlación entre 2 dimensiones de los individuos) a la población simulada. 
