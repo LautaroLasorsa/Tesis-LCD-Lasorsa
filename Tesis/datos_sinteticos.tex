@@ -50,7 +50,19 @@ La generación de datos se paralelizo utilizando GPU mediante CUDA\cite{lasorsa2
     \label{fig:figura_1} % Etiqueta para referenciar
 \end{figure}
 
-Como puede verse en \ref{fig:figura_1}, al tener más de 200 grupos es dificil distinguir las distintas distribuciones, inclusive en escala logaritmica.   
+Como puede verse en \ref{fig:figura_1}, al tener más de 200 grupos es dificil distinguir las distintas distribuciones, inclusive en escala logaritmica. A su vez, se nota que cuando la granularidad es baja, cada aumento de granularidad acerca significativamente $BE_{G_j}$ a $BE_N$
+
+Esto nos permite formular la primera de las hipotesis del presente trabajo:
+
+%\begin{hyp}[H\ref{hyp:first}] \label{hyp:first}
+%Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,1)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$
+%
+%\end{hyp}
+
+
+\begin{hyp}[H\ref{hyp:first}] \label{hyp:first}
+    This is my first hypothesis.
+\end{hyp}
 
 \section{Datos $LN(0,\sigma^2)$}
 

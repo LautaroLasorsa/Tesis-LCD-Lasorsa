@@ -6,7 +6,7 @@ FIGURAS= $(addprefix figuras/,$(addsuffix .png,$(LISTA_FIGURAS)))
 show:
 	echo $($(VARIABLE))
 
-todo: tesis.pdf presentacion_parcial.pdf
+todo: tesis.pdf presentacion_parcial.pdf indice_comentado.pdf
 
 
 indice_comentado.pdf: indice\ comentado/*.tex
@@ -17,10 +17,12 @@ presentacion_parcial.pdf: presentacion_parcial/*.tex $(FIGURAS)
 	- cd presentacion_parcial && lualatex presentacion_parcial.tex
 	mv presentacion_parcial/presentacion_parcial.pdf presentacion_parcial.pdf 
 
-# Regla para generar el PDF de la tesis
 tesis.pdf: Tesis/*.tex Tesis/logofcen.pdf Tesis/tesis.bib Tesis/tesis.cls $(FIGURAS)
 	- rm Tesis/tesis.bbl Tesis/tesis.blg Tesis/tesis.aux
-	- cd Tesis && lualatex tesis.tex && bibtex tesis.aux && lualatex tesis.tex && lualatex tesis.tex
+	- cd Tesis && lualatex tesis.tex
+	- cd Tesis && bibtex tesis.aux 
+	- cd Tesis && lualatex tesis.tex 
+	- cd Tesis && lualatex tesis.tex
 	mv Tesis/tesis.pdf tesis.pdf
 	
 

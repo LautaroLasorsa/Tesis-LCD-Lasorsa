@@ -78,7 +78,10 @@
 
 \title{{\normalsize Tesis de Licenciatura en Ciencia de Datos (parcial)}
 \\\vspace*{2cm}
-\mbox{\Large Mejora en la medición del Bienestar Económico}}
+\mbox{\Large Propuesta de Mejora en la medición del} 
+% \\\vspace*{2cm} 
+\mbos{\Largo Bienestar Económico}
+}
 
 \author{\large Lautaro Lasorsa
 \\\vspace*{1cm}}
@@ -129,7 +132,7 @@ Facultad de Ciencias Exactas y Naturales\\
         $$
         \frac{1}{N} * \sum_{i=0}^N log(X_i)
         $$
-        Problema: Es muy díficil saber los ingresos de absolutamente cada individuo.
+        Problema: Es muy dificil saber los ingresos de absolutamente cada individuo.
         \pause
         \item \textbf{Medición Aproximada (propuesta)}:
         $$
@@ -159,24 +162,24 @@ Facultad de Ciencias Exactas y Naturales\\
 \end{frame}
 
 \begin{frame}
-    \frametitle{Partes de la tésis}
+    \frametitle{Partes de la tesis}
     \begin{enumerate}
-        \item \textbf{Datos sinteticos}: Generar datos sinteticos y ver cómo se comportan los primeros dos supuestos.
-        \item \textbf{Datos reales de ingreso}: Evaluar los primeros dos supuestos sobre datos reales y comparar los resultados con lo obtenido en los datos sinteticos.
-        \item \textbf{Predicción empirica}: Evaluar si la medición propuesta mejora la capacidad de predecir otras variables empiricas que \textbf{presumo} están relacionadas al bienestar ecónomico.
+        \item \textbf{Datos sintéticos}: Generar datos sintéticos y ver cómo se comportan los primeros dos supuestos.
+        \item \textbf{Datos reales de ingreso}: Evaluar los primeros dos supuestos sobre datos reales y comparar los resultados con lo obtenido en los datos sintéticos.
+        \item \textbf{Predicción empírica}: Evaluar si la medición propuesta mejora la capacidad de predecir otras variables empíricas que \textbf{presumo} están relacionadas al bienestar ecónomico.
     \end{enumerate}
 \end{frame}
 
 \begin{frame}
-    \frametitle{ Generación de datos sinteticos }
+    \frametitle{ Generación de datos sintéticos }
     \begin{lemma}
         Sean $X_1 \dots X_N$ los ingresos de los individuos (o familias):
         $$X_i \sim LN(\mu,\sigma^2)$$ 
         $$ log(X_i) \sim N(\mu, \sigma^2)$$
-        Es decir, los ingresos siguen una distribucion log-normal (LN) de parametros $\mu$ y $\sigma^2$
+        Es decir, los ingresos siguen una distribución log-normal (LN) de parámetros $\mu$ y $\sigma^2$
     \end{lemma}
     
-    Se generarón 2 datasets sinteticos utilizando CUDA para paralelizar los computos.
+    Se generaron 2 datasets sintéticos utilizando CUDA para paralelizar los cómputos.
 
     En ambos se simularon poblaciones con $N\ =\ 1\ 000\ 000$ y se hicieron las mediciones parciales para todas las granularidades posibles (incluyen $G=N$ y $G=1$)
 
@@ -195,7 +198,7 @@ Facultad de Ciencias Exactas y Naturales\\
 
             Como algunos hay valores negativos (recordar que la medición ideal es $\hat{\mu}$ y $\mu=0$), para mejorar la visualización se le restó a todos los puntos el menor valor en eje Y entre todos los puntos.
 
-            Se puede ver que entre 100 y 200 grupos se alcanzán una distribución dificilmente distinguible de la ideal, mientras que para granularidades menores se nota una diferencia de ordenes de magnitud
+            Se puede ver que entre 100 y 200 grupos se alcanza una distribución dificilmente distinguible de la ideal, mientras que para granularidades menores se nota una diferencia de órdenes de magnitud
 
         \end{minipage}
 
@@ -212,7 +215,7 @@ Facultad de Ciencias Exactas y Naturales\\
     \frametitle{Datos $LN(0,1)$}
     \begin{multicols}{2}
         \begin{minipage}{\linewidth}
-            Podemos ver los mismos datos pero utilizando un violiplot y teniendo marcados los cuartiles de la distribución.
+            Podemos ver los mismos datos pero utilizando un violinplot y teniendo marcados los cuartiles de la distribución.
 
         \end{minipage}
 
@@ -250,7 +253,7 @@ Facultad de Ciencias Exactas y Naturales\\
 
     También podemos ver que llegando a 100 grupos (\textbf{percentiles}) la correlación es razonablemente alta para todos los $\sigma^2$ evaluados.
 
-    Seber esto es importante para la parte empirica porque nos índica que tan bien aproximamos la medición ideal cuando utilizamos datos con menor granularidad.
+    Saber esto es importante para la parte empírica porque nos indica que tan bien aproximamos la medición ideal cuando utilizamos datos con menor granularidad.
 
     \includegraphics[width=\linewidth ]{../figuras/figura_4_mediciones_aproximadas_vs_ideal_varianza.png} % Ajusta la ruta de la imagen
 
@@ -263,7 +266,7 @@ Facultad de Ciencias Exactas y Naturales\\
     \textbf{Entonces:} $$ Corr_X(BE_i,BE_j) > Corr_Y(BE_i,BE_j)$$
     \end{conjeture}
     \pause
-    \textbf{Inverosimil}
+    \textbf{Inverosímil}
     \includegraphics[width=\linewidth ]{../figuras/figura_12_pearson_hasta_100_grupos.png} % Ajusta la ruta de la imagen
 \end{frame}
 
@@ -285,10 +288,10 @@ Facultad de Ciencias Exactas y Naturales\\
     Los datos fueron obtenidos del Banco Mundial, y tienen una precisión a nivel de percentil.
     \begin{itemize}
         \item No hay disponibles para todos los países todos los años.
-        \item Se obtienen de los institutos de estadisticas de cada país.
+        \item Se obtienen de los institutos de estadísticas de cada país.
         \item Hay distintos niveles de alcance: \textbf{Nacional}, \textbf{Urbano} y \textbf{Rural}. Solo usaremos datos de nivel \textbf{Nacional}
-        \item Hay dos tipos de encuestas: \textbf{Consumo} e \textbf{Ingresos}. Estas son metodologicámente incompatibles y deben utilizarse de forma separada.
-        \item Hare todos los análisis en paralelo para ambos tipos de encuestas. 
+        \item Hay dos tipos de encuestas: \textbf{Consumo} e \textbf{Ingresos}. Estas son metodológicamente incompatibles y deben utilizarse de forma separada.
+        \item Haré todos los análisis en paralelo para ambos tipos de encuestas. 
     \end{itemize}
     \includegraphics[width=\linewidth ]{../figuras/figura_10_disponibilidad_datos.png} % Ajusta la ruta de la imagen    
 \end{frame}
@@ -350,9 +353,9 @@ Facultad de Ciencias Exactas y Naturales\\
     \begin{multicols}{2}
         \begin{minipage}{\linewidth}
             \begin{itemize}
-                \item Para cada año, se utilizó bootstrap no parametrico (remuestreo) para estimar la distribución de la correlación las mediciones del bienestar ecónomico y la EVN.
+                \item Para cada año, se utilizó bootstrap no paramétrico (remuestreo) para estimar la distribución de la correlación las mediciones del bienestar ecónomico y la EVN.
             
-                \item El sombreado refleja el rango intercuartilico. 
+                \item El sombreado refleja el rango intercuartílico. 
 
                 \item Las conclusiones que podemos alcanzar son similares que con el gráfico anterior.
             \end{itemize}\end{minipage}
@@ -371,7 +374,7 @@ Facultad de Ciencias Exactas y Naturales\\
     \begin{multicols}{2}
         \begin{minipage}{\linewidth}
             \begin{itemize}
-                \item Se repitió el experimento anterior con metricas de correlación no líneal.
+                \item Se repitió el experimento anterior con metricas de correlación no lineal.
                 \item Se mantienen a grandes razgos las conclusiones anteriores.
             \end{itemize}
         \end{minipage}

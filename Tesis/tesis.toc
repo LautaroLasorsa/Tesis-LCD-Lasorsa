@@ -28,11 +28,3 @@
 \contentsline {subsection}{\numberline {3.3.1}Comportamiento condicional}{10}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Interacción con granularidad}{10}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Comportamiento no condicional}{10}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4.}Datos reales: Distribución de los ingresos}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Datos disponibles}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Distribución empirica}{11}{section.4.2}%
-\contentsline {chapter}{\numberline {5.}Datos reales: Mejora de la capacidad predictiva}{12}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Esperanza de Vida al Nacer (EVN)}{12}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Otros indicadores}{12}{section.5.2}%
-\contentsline {chapter}{\numberline {6.}Conclusiones}{13}{chapter.6}%
-\contentsline {chapter}{\numberline {7.}Posibles trabajos futuros}{14}{chapter.7}%
