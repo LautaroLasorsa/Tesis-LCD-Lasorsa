@@ -20,6 +20,7 @@ presentacion_parcial.pdf: presentacion_parcial/*.tex $(FIGURAS)
 tesis.pdf: Tesis/*.tex Tesis/logofcen.pdf Tesis/tesis.bib Tesis/tesis.cls $(FIGURAS)
 	- rm Tesis/tesis.bbl Tesis/tesis.blg Tesis/tesis.aux
 	- cd Tesis && lualatex tesis.tex
+#	- cd Tesis && lualatex tesis.tex
 	- cd Tesis && bibtex tesis.aux 
 	- cd Tesis && lualatex tesis.tex 
 	- cd Tesis && lualatex tesis.tex
