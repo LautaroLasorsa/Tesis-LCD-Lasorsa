@@ -15,7 +15,9 @@
 \usepackage{amsthm}
 %\usepackage{hypothesis} % Para las hipótesis
 
-\newtheorem{hipotesis}{Hipotesis}[chapter]
+\newtheorem{hipotesis}{Hipótesis}[chapter]
+\renewcommand{\thehipotesis}{H\thechapter.\arabic{hipotesis}}
+\renewcommand{\thefigure}{F\thechapter.\arabic{figure}}
 
 \begin{document}
 

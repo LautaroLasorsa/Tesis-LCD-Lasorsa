@@ -25,6 +25,6 @@
 \contentsline {section}{\numberline {3.1}Generación}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Datos $LN(0,1)$}{9}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Datos $LN(0,\sigma ^2)$}{10}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Comportamiento condicional}{10}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Interacción con granularidad}{10}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Comportamiento no condicional}{10}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Comportamiento condicional}{11}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Interacción con granularidad}{13}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Comportamiento no condicional}{14}{subsection.3.3.3}%

@@ -47,34 +47,137 @@ La generación de datos se paralelizo utilizando GPU mediante CUDA\cite{lasorsa2
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_1_dispersion_plot_completo.png} % Cambia el nombre del archivo
     \caption{Distribución de $BE_j^i$, donde el eje X es la granularidad (cantidad de grupos) de la medición. Para facilitar la visualización, a cada elemento se le resto el mínimo de todo el dataset}
-    \label{fig:figura_1} % Etiqueta para referenciar
+    \label{fig:1} % Etiqueta para referenciar
 \end{figure}
 
-Como puede verse en \ref{fig:figura_1}, al tener más de 200 grupos es dificil distinguir las distintas distribuciones, inclusive en escala logaritmica. A su vez, se nota que cuando la granularidad es baja, cada aumento de granularidad acerca significativamente $BE_{G_j}$ a $BE_N$
+Como puede verse en \ref{fig:1}, al tener más de 200 grupos es dificil distinguir las distintas distribuciones, inclusive en escala logaritmica. A su vez, se nota que cuando la granularidad es baja, cada aumento de granularidad acerca significativamente $BE_{G_j}$ a $BE_N$
 
 Esto nos permite formular la primera de las hipotesis del presente trabajo:
 
-\begin{hyp}[Mejora de la granularidad]\label{hyp:first}
+\begin{hipotesis}[Mejora de la granularidad]\label{hipo:1}
     \\
-    Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,1)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$
+    Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,1)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $\exists N_0 / \forall N > N_0 $, $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$ para casi toda población $P$
+    
+    Para la falsasión empirica de esta hipótesis, es necesaría la hipotesis auxiliar de $N_0 \leq 1.000.000$    
 %
-\end{hyp}
+\end{hipotesis}
 
-As seen in Hypothesis \ref{hyp:first}, we assume that...
+Como puede verse en la figura \ref{fig:3}, la hipotesis \ref{hipo:1} resulta verosimil con los datos simulados con distribución $LN(0,1)$ 
 
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_3_mediciones_aproximadas_vs_ideal.png} % Cambia el nombre del archivo
+    \caption{Aplicación de metrica de correlación líneal y no líneal entre $BE_G$ y $BE_N$ para todos los $G | N$ en muestras $LN(0,1)$ con $N=10^6$}
+    \label{fig:3}
+\end{figure}
+
+De hecho, la figura \ref{fig:3} nos permite ser más ambiciosos y enunciar que aumentar la granularidad mejora la correlación tanto en el caso líneal (Pearson) como aplicando diversas metricas de correlación no líneal (Spearman y Kendall)
+
+Notar que a su vez podemos aplicar la correlación de Spearman a la relación entre granularidad y las correlaciones (los ejes X e Y del gráfico), y para las 3 series da una correlación de 1 (dado que están perfectamente ordenados) y un p-valor de aproximadamente 0.
 
 \section{Datos $LN(0,\sigma^2)$}
 
-En esta sección se analizán los datos generados utilizando una distribución $LogNormal(0,\sigma^2)$ para distintos valores de $\sigma^2$. Trabajar con distintos valores de $\sigma^2$ permite una mayor variedad y riqueza de análisis.
+Al tener distintos valores de $\sigma^2$ podemos plantear todo un abanico de preguntas nuevas:
+
+\begin{enumerate}
+    \item \textbf{¿Cómo cambia la correlación entre $BE_G$ y $BE_N$ condicional a $\sigma^2$?}
+    \item \textbf{¿Cómo es la correlación entre $BE_{G_i}$ y $BE_{G_j}$ condicional a $\sigma^2$?}
+    \item \textbf{¿Cómo es la correlación entre $BE_G$ y $BE_N$ no condicional a $\sigma^2$?}
+\end{enumerate}
 
 \subsection{Comportamiento condicional}
 
-Se estudia el comportamiento condicional a $\sigma^2$, tratandolo como 10 poblaciones independientes y estudiandolas.
+Lo primero que podemos pretender es generalizar \ref{hipo:1} para todos los valores de $\sigma^2$:
+
+\begin{hipotesis}[Mejora de la granularidad generalizada]\label{hipo:2}
+    \\
+    Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,\sigma^2)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $\exists N_0 / \forall N > N_0 $, $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$ para casi toda población $P$
+    
+    Para la falsasión empirica de esta hipótesis, es necesaría la hipotesis auxiliar de $N_0 \leq 1.000.000$  
+\end{hipotesis}
+
+Notar que la hipotesis \ref{hipo:2} es una generalización no trivial de \ref{hipo:1} ya que modificar el $\sigma^2$ tiene efectos no lineales en la distribución.
+
+Como puede verse en la figura \ref{fig:4}, esta hipotesis generalizada también resulta verosimil con los datos generados.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_4_mediciones_aproximadas_vs_ideal_varianza.png} 
+    \caption{Aplicación de metrica de correlación líneal entre $BE_G$ y $BE_N$ para todos los $G | N$ en muestras $LN(0,\sigma^2)$ con $N=10^6$, condicional a distintos valores de $\sigma^2$}
+    \label{fig:4}
+\end{figure}
+
+Algo que podemos notar observando \ref{fig:4} es que para varianzas altas la correlación líneal entre las granularidades bajas y la medición ideal es notablemente baja.
+
+Esto puede apreciarse mejor en \ref{fig:5} , donde podemos ver que mientras que $BE_1$ y $BE_N$ tienen una tendencia marcada para $\sigma^2=1$, para $\sigma^2=10$ se comportan como variables practicamente independientes.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_5_dist_conjuntas_var_y_cgrupos.png} 
+    \caption{Disperción conjunta de las metricas entre distintas granularidades, condicional a distintos valores de $\sigma^2$. Puede verse como la correlación entre las distintas granularidades (ejes X e Y de cada gráfico) disminuye al aumentar la varianza (indicada en el titulo de cada cuadro)}
+    \label{fig:5}
+\end{figure}
+
+
 
 \subsection{Interacción con granularidad}
 
-Se estudia como se comportan las mediciones con distintas granularidades al modificar $\sigma^2$
+Lo observado en \ref{fig:4} y \ref{fig:5} nos puede llevar a proponer una hipótesis ambiciosa sobre la relación entre la varianza de la población y la granularidad de la medición:
+
+\begin{hipotesis}[Relación entre granularidad y varianza]\label{hipo:3}
+    \\
+
+    Sean:
+
+    \begin{itemize}
+    \item $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,\sigma_P^2)$ 
+    \item $Q$ un conjunto de poblaciones, donde cada $Q_i \in P$ es una población de $N$ individuos $Q_{i,j}$ $(1 \leq j \leq N)$, con $Q_{i,j}$ variables IID y $Q_{i,j} \sim LN(0,\sigma_Q^2)$, con $\sigma_Q^2 > \sigma_P^2$
+    \item $G_1, G_2 \in Divs(N)$, con $G_1 \neq G_2$.
+    \end{itemize}
+
+    
+    Entonces, $\exists N_0/ \forall N > N_0, $ $Pearson_P(BE_{G_1},BE_{G_2}) > Pearson_Q(BE_{G_1}, BE_{G_2})$, $\forall G_1, G_2 (G_1 \neq G_2)$ y para casi toda tupla $(P,Q)$.
+    
+
+    Para la falsasión empirica de esta hipótesis, es necesaría la hipotesis auxiliar de $N_0 \leq 1.000.000$
+\end{hipotesis}
+
+Sorprendentemente, la hipotesis \ref{hipo:3} resulta ser inverosimil con los datos, como puede verse en la figura \ref{fig:12}, y también lo es si cambiamos $Pearson_P(BE_{G_1},BE_{G_2}) > Pearson_Q(BE_{G_1}, BE_{G_2})$ por $Spearman_P(BE_{G_1},BE_{G_2}) > Spearman_Q(BE_{G_1}, BE_{G_2})$, como puede verse en \ref{fig:13}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_12_pearson_hasta_100_grupos.png} 
+    \caption{En los datos simulados con diversas varianzas, la $Pearson(BE_i,BE_{100} | \sigma^2)$, donde cada serie representa un nivel de granularidad y el eje X los distintos $\sigma^2$}
+    \label{fig:12}
+\end{figure}
+
+Observando \ref{fig:12}  y \ref{fig:13} podemos también notar que:
+
+\begin{itemize}
+    \item Para un mismo valor de $\sigma^2$, aumentar la granularidad siempre meora la correlación con el caso tomar 100. Esto es verosimil con \ref{hipo:2}
+    \item Las series tienen un comportamiento similar, no en nivel pero si en cambio, frente a los cambios en $\sigma^2$
+\end{itemize}
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_13_spearman_hasta_100_grupos.png} 
+    \caption{En los datos simulados con diversas varianzas, la $Spearman(BE_i,BE_{100} | \sigma^2)$, donde cada serie representa un nivel de granularidad y el eje X los distintos $\sigma^2$}
+    \label{fig:13}
+\end{figure}
+
+
 
 \subsection{Comportamiento no condicional}
 
-Se trabajará con toda la muestra sin condicionar por $\sigma^2$, es decir tratandola como una unica población heterogenea.
+Lo estuidiado en \ref{hipo:2} nos lleva a preguntarnos como se comporta la correlación entre granularidades cuando tenemos diferentes $\sigma^2$ coexistiendo en la misma muestra.
+
+Lo observado en \ref{fig:15} nos indica que tener poblaciones con distintas $\sigma^2$ aumenta enormemente la correlación entre las distintas granularidades.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\textwidth]{../figuras/figura_15_simulados_vs_100.png} 
+    \caption{En los datos simulados con diversas varianzas, la $Spearman(BE_i,BE_{100})$, donde el eje X son las distintas granularidades (cantidad de grupos). Notar que el eje Y está en el rango [0.99,1]. La serie \textbf{simulados estandarizados} corresponde a, para una población $P_i$, restarle a cada $BE_{G_j}(P_i)$ el valor de $BE_N(P_i)$, para evitar que medias poblacionales ligeramente distintas (en los logaritmos) influyán en la correlación. Lo notable es que hacer esto aumenta la correlación en vez de reducirla.}
+    \label{fig:15}
+\end{figure}
+
+Esta caracteristica lleva a pensar que en el caso empirico, como no tenemos a lo países agrupados por $\sigma^2$, va a haber una correlación fuerte entre las distintas granularidades. 
