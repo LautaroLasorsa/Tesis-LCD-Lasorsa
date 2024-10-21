@@ -29,7 +29,10 @@ tesis.pdf: Tesis/*.tex Tesis/logofcen.pdf Tesis/tesis.bib Tesis/tesis.cls $(FIGU
 	- cd Tesis && lualatex tesis.tex 
 	- cd Tesis && lualatex tesis.tex
 	mv Tesis/tesis.pdf tesis.pdf
-	
+
+parcial: $(ARCHIVO).pdf
+	pdftk $(ARCHIVO).pdf cat $(FROM)-$(TO) output $(ARCHIVO)$(FROM)_$(TO).pdf
+
 resultados: $(RESULTADOS)
 
 # Regla para construir todas las figuras

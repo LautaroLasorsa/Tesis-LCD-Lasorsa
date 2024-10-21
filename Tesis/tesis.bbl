@@ -18,4 +18,10 @@ Lautaro Lasorsa.
 \newblock
   \url{https://gist.github.com/LautaroLasorsa/739dae8ec5f9041f243150183070815a}.
 
+\bibitem{income_distribution_dataset}
+{World Bank}.
+\newblock Poverty and inequality platform (version
+  20240627\_2017\_01\_02\_prod) [data set], 2024.
+\newblock World Bank Group. Available at: https://pip.worldbank.org/.
+
 \end{thebibliography}

@@ -1,4 +1,4 @@
-\chapter{Medición del Bienestar Ecónomico}
+\chapter{Medición del Bienestar Ecónomico} \label{chapter:mediciones_bienestar_economico}
 
 En este cápitulo se presenta la problematica a tratar en la tésis, se motiva su estudio y se comparán las formas actuales de medirlo con las alternativas propuestas.
 
@@ -52,7 +52,7 @@ La medición actual del $BE$, utilizada por ejemplo por el \textbf{Índice de De
 En el caso puntual del HDI utiliza como insumo el GNI (Gross Domestic Income, Ingreso Nacional Bruto) a Paridad de Poder Adquisitivo (PPA, PPP en inglés). Es decir:
 
 $$
-HDI_{income} = log(GNI\ per\ cápita)
+    HDI_{income} = min(1, \frac{ln(GNI\ per\ capita) - ln(100)}{ln(75000)-ln(100)})
 $$
 
 Generalizandolo, dada una población de $N$ individuos, cuyos ingresos son $X_1, X_2, \dots, X_N$, la medición actual del bienestar ecónomico es:
@@ -133,6 +133,35 @@ Sin embargo, hay otro problema que en principio es más importante a tener en cu
 
 Es esta última desventaja la que este trabajo busca subsanar proponiendo una medición alternativa, y a su vez evaluar que mejoras ofrece dicha alternativa frente a la metodogía actual.
 
+\section{Medición alternativa actual: Corrección por desigualdad}
+
+Reconociendo que una de las falencias del metodo para calcular el HDI es la insensibilidad frente a la desigualdad, el informe de la UNDP (United Nations Development Programme) también incluye el $IHDI$ (Índice de Desarrollo Humano ajustado por Desigualdad). En este se define una métrica de penalización para cada indicador:
+$$
+    A_X = 1 - \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i}
+$$
+
+Así, si el PBI PPA per cápita de un país en el año 2024 fue $X$, su puntaje de ingresos para el $HDI$ sería $ HDI_{income} = min(1, \frac{(log(X)-log(100))}{(log(75000)-log(100))})$, y su puntaje de ingresos para el $IHDI$ sería $IHDI_{income} = (1-A_{income}) * HDI_{income}$
+
+El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exogena) de la misma y no como una consecuencia natural (endogena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos.
+
+Generalización, esta genera una métrica tal que :
+
+$$
+    BE_I(X) = \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i} * log(\frac{1}{N} * \sum_{i=1}^{N}X_i)
+$$
+
+\section{Medición alternativa actual: Mediana de los ingresos}
+
+Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este índicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de a aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
+
+Generalizando, esto resulta en:
+
+$$
+    BE_M(X) = F_X^{-1}(\frac{1}{2})
+$$
+
+Donde $F_X$ es la función de densidad acumulada de $X$ (es decir, dado un valor $a$, $F_X(a)$ nos da la proporción de valores de $X$ menores a $a$), y $F_X^{-1}$ es su inversa (de no ser invertible la función, da el mínimo de la preimagen)
+
 \section{Propuesta de mejora: Medición ideal}
 
 \subsection{Metodología}
@@ -151,8 +180,6 @@ Es la medición exacta de la definición que propusimos de Bienestar Económico.
 Adicionalmente, al contemplar que un aumento en los ingresos de individuos que ya tienen altos ingresos les genera un menor beneficio marginal que aumentar en la misma cantidad absoluta los ingresos de individuos de menores ingresos, esta metrica refleja le eficiencia de la distribución del ingreso en una sociedad.
 
 De esta forma, esta metrica premia simultaneamente un aumento de la productividad de una ecónomia como una distribución más eficiente de la misma.
-
-
 
 \subsection{Desventajas}
 

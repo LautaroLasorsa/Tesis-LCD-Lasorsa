@@ -5,45 +5,45 @@ The style file: unsrt.bst
 Database file #1: tesis.bib
 Warning--entry type for "lasorsa2024simluacion_cuda" isn't style-file defined
 --line 20 of file tesis.bib
-You've used 3 entries,
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            460 strings with 4017 characters,
-and the built_in function-call counts, 423 in all, are:
-= -- 36
-> -- 12
+            464 strings with 4195 characters,
+and the built_in function-call counts, 550 in all, are:
+= -- 46
+> -- 16
 < -- 0
-+ -- 6
-- -- 3
-* -- 8
-:= -- 78
-add.period$ -- 10
-call.type$ -- 3
-change.case$ -- 3
++ -- 8
+- -- 4
+* -- 9
+:= -- 97
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 21
-empty$ -- 50
-format.name$ -- 3
-if$ -- 94
+cite$ -- 4
+duplicate$ -- 26
+empty$ -- 68
+format.name$ -- 4
+if$ -- 124
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 4
 missing$ -- 2
-newline$ -- 19
-num.names$ -- 3
-pop$ -- 15
+newline$ -- 24
+num.names$ -- 4
+pop$ -- 22
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 6
+skip$ -- 9
 stack$ -- 0
 substring$ -- 0
-swap$ -- 2
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 3
-width$ -- 4
-write$ -- 35
+while$ -- 4
+width$ -- 5
+write$ -- 45
 (There was 1 warning)

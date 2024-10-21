@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage[left=3cm,right=3cm,bottom=3.5cm,top=3.5cm]{geometry}
+\usepackage[left=3cm,right=3cm,bottom=2.5cm,top=2.5cm]{geometry}
 \usepackage{url}
 \usepackage{graphicx} % Paquete necesario para incluir imágenes
 \usepackage{caption}  % Opcional, para personalizar los pies de figura
@@ -14,6 +14,7 @@
 \usepackage{float}
 \usepackage{amsthm}
 %\usepackage{hypothesis} % Para las hipótesis
+
 
 \newtheorem{hipotesis}{Hipótesis}[chapter]
 \renewcommand{\thehipotesis}{H\thechapter.\arabic{hipotesis}}
@@ -24,7 +25,7 @@
 %%%% CARATULA
 
 \def\autor{Lautaro Lasorsa}
-\def\tituloTesis{Propuesta de mejora en la medición del bienestar económico}
+\def\tituloTesis{Propuesta de mejora en la medición del bienestar económico: Consideración de la utilidad que cada individuo obtiene de sus ingresos}
 \def\runtitulo{Propuesta de mejora en la medición del bienestar económico}
 \def\runtitle{Proporsal of improvement in the measurement of economic wellfare}
 \def\director{Rodrigo Castro}
@@ -54,13 +55,16 @@
 
 %%%% ACA VA EL CONTENIDO DE LA TESIS
 
+\setlength{\parskip}{0.25em}
+\input{introduccion.tex}
+
 \input{medicion_bienestar_economico.tex}
 
 \input{tecnicas_a_utilizar.tex}
 
 \input{datos_sinteticos.tex}
 
-% \input{datos_reales_distribucion_ingresos.tex}
+\input{datos_reales_distribucion_ingresos.tex}
 
 % \input{datos_reales_otros_indicadores.tex}
 

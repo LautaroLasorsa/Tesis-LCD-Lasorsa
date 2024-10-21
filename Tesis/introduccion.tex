@@ -1,0 +1,10 @@
+\chapter{Introducción}
+
+Actualmente se utiliza para estimar el bienestar ecónomico de una población el logaritmo natural del GNI PPA per cápita \cite{undp2023tech_notes}, pero este metodo tiene el problema de que aplica la utilidad marginal decreciente de los ingresos al promedio de los ingresos y no a los ingresos de cada individuo, y además es sensible a los ingresos más altos, esperables por la distribución lognormal de los ingresos en una sociedad \cite{gibrat1931inégalités}. 
+
+Alternativas como corregir este indicador por la desigualdad tienen el problema de que la penalizán de forma deliverada y exogena y no como un resultado endogeno de las ineficiencias economicas que genera. Otras alternativas, como la mediana o la proporción de la población que está debajo de un cierto umbral, tienen el problema de sintetizar excesivamente la información y ser insensibles a grandes partes de la distribución.
+
+En el presente trabajo, estudiamos si el reemplazar el $\ln(GNI\ PPA\ per\ capita)$ por el promedio de los logaritmos de los ingresos de los individuos resulta en un mejor indicador, dado que contempla la utilidad de los ingresos a nivel de cada individuo, y el cómo nos podemos aproximar a este indicador ideal con los datos disponibles.
+
+En el cápitulo \ref{chapter:mediciones_bienestar_economico} se comparará la metodología actual para medir el bienestar ecónomico de una sociedad y se propondrá una medición alternativa. En el cápitulo \ref{chapter:datos_sinteticos} se buscará aplicar ambos metodos a un conjunto de datos sinteticos para comparar su comportamiento. En el cápitulo 5 se comenta la disponibilidad de datos reales sobre distribución del ingreso, y en el cápitulo 6 se busca comparar ambos indicadores (propuesto y actual) mediante su capacidad de predecir otras variables de interes, como la esperanza de vida al nacer. El cápitulo \ref{chapter:tecnicas_a_utilizar} explica las distintas técnicas que se utilizarán en este trabajo, para quienes no las conozcan o quieran refrescarlas antes de seguir la lectura, y los últimos 2 cápitulos son sobre las conclusiones y posibles trabajos futuros.
+

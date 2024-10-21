@@ -1,11 +1,72 @@
-\chapter{Datos reales: Distribución de los ingresos}
+\chapter{Datos reales: Distribución de los ingresos} \label{chapter:datos_reales_distribucion}
 
 En esta sección se utilizán datos reales de distribución del ingreso de distintos países y años para estudiar su distribución y compararlos con los datos sinteticos antes generados.
 
 \section{Datos disponibles}
 
-Se presenta la base de datos disponible. Se comentan los distintos alcances (nacional, urbano y rural) y tipos (ingresos y consumo) de las encuestas disponibles.
+Se utilizarán datos del Banco Mundial \cite{income_distribution_dataset} sobre distribución del ingreso en diversos países. Esta base de datos está construida en base a encuestas aportadas por los países, y tiene una granularidad al nivel de los percentiles.
+    
+Sobre este dataset, hay que tener en cuenta 2 aspectos importantes:
+
+\textbf{Alcance de la encuesta:}
+
+\begin{itemize}
+    \item Nacional
+    \item Urbano
+    \item Rural
+\end{itemize}
+
+En este caso, se utilizarán unicamente los registros de alcance nacional y se ignoraran las encuestas que tienen solo alcance urbano o rural.
+
+\textbf{Tipo de encuesta}
+
+\begin{itemize}
+    \item Ingresos
+    \item Consumo
+\end{itemize}
+
+Como estas dos metodologías son incompatibles entre si, todos los analísis se harán por separado para cada uno de los tipos de encuestas.
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_10_disponibilidad_datos.png} % Cambia el nombre del archivo
+    \caption{Disponibilidad de las encuestas de ingresos y consumo a lo largo de los años}
+    \label{fig:10} % Etiqueta para referenciar
+\end{figure}
+
+Cómo puede verse en \ref{fig:10}, la distribución del ingreso es irregular y ha aumentado en los últimos años. Para que la muestra sea significativa, solo se utilizarán los años para los cuales haya al menos 30 países con datos disponibles para ese tipo de encuesta.
 
 \section{Distribución empirica}
 
 Se estudian las distribuciones empiricas disponibles y se las compara con los datos sinteticos generados en el cápitulo anterior.
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_14_correlacion_vs_100_empirica.png} % Cambia el nombre del archivo
+    \caption{Correlaciones de Pearson y Spearman entre $BE_1$ y $BE_{100}$ en los datos reales (separados entre ingresos y consumo) y los datos simulados de $\sigma^2=1$ y $\sigma^2=10$. Se ve que en los datos reales la correlación es mucho mayor}
+    \label{fig:14} % Etiqueta para referenciar
+\end{figure}
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_16_empiricos_vs_simulados_sin_discriminar_varianza.png} % Cambia el nombre del archivo
+    \caption{Correlaciones de Pearson y Spearman entre $BE_1$ y $BE_{100}$ en los datos reales (separados entre ingresos y consumo) y en los datos simulados sin condicionar por $\sigma^2$. Se observa una mayor similitud entre ambas capacidades predictivas}
+    \label{fig:16} % Etiqueta para referenciar
+\end{figure}
+
+Como puede verse en \ref{fig:14} y \ref{fig:16}, la correlación entre las mediciones del bienestar ecónomico sobre los datos reales condice más con lo observado en los datos sinteticos sin condicionar por $\sigma^2$ que cuando se condiciona por $\sigma^2$. Lo intersante, que puede observarse en \ref{fig:17} y \ref{fig:18} es que cuando se condiciona por año este fenomeno se mantiene. Esto nos lleva a pensar que esa capacidad predictiva no es debido a una correlación entre el bienestar económico y el año.
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_17_correlacion_vs_100_empirica_condicional_pearson.png} % Cambia el nombre del archivo
+    \caption{Correlación de Pearson entre entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 30 países disponibles}
+    \label{fig:17} % Etiqueta para referenciar
+\end{figure}
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth]{../figuras/figura_18_correlacion_vs_100_empirica_condicional_spearman.png} % Cambia el nombre del archivo
+    \caption{Correlación de Spearman entre entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 30 países disponibles}
+    \label{fig:18} % Etiqueta para referenciar
+\end{figure}
+
