@@ -51,8 +51,8 @@ percentiles_ingresos_comp = percentiles_ingresos[
     np.array(percentiles_ingresos['reporting_level']=='national')
 ]
 
-muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,30)
-muestras_consumo = GenerarMuestra(percentiles_ingresos_comp, 30)
+muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,20)
+muestras_consumo = GenerarMuestra(percentiles_ingresos_comp, 20)
 
 muestras = [muestras_ingreso, muestras_consumo]
 

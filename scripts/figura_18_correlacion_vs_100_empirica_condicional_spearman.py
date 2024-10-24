@@ -51,8 +51,8 @@ percentiles_ingresos_comp = percentiles_ingresos[
     np.array(percentiles_ingresos['reporting_level']=='national')
 ]
 
-muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,30)
-muestras_consumo = GenerarMuestra(percentiles_ingresos_comp, 30)
+muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,20)
+muestras_consumo = GenerarMuestra(percentiles_ingresos_comp, 20)
 
 muestras = [muestras_ingreso, muestras_consumo]
 
@@ -73,7 +73,7 @@ nombres_m = ["ingresos","consumo"]
 nombres =  ["Deciles","Quintiles","Total"]
 estilos =  ['--','-.',':']
 
-xticks = list(range(1994,2022))
+xticks = list(range(1991,2022))
 xlabel_ticks = list(map(str, xticks))
 
 yticks_mayor = np.linspace(0.96,1,9)

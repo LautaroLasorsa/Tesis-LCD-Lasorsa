@@ -150,6 +150,8 @@ $$
     BE_I(X) = \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i} * log(\frac{1}{N} * \sum_{i=1}^{N}X_i)
 $$
 
+
+
 \section{Medición alternativa actual: Mediana de los ingresos}
 
 Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este índicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de a aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
@@ -213,3 +215,10 @@ Esta metodología tiene, parcialmente, las ventajas tanto de la metodología ide
 \subsection{Desventajas}
 
 Tiene la desventaja de ser una solución de compromiso, y justamente parte del interes de este trabajo es ver, para valores logisticamente factibles de $G$, cuál es la diferencia entre $BE_G$ y $BE_N$.
+
+\section{Consideraciones generales}
+
+
+Todas las metodologías propuestas coinciden para una sociedad con una distribución perfectamente igualitaría de los ingresos.
+
+A su vez, si asumimos que los ingresos tienen una distribución log-normal $LN(\mu,\sigma^2)$, como sugiere (Gibrat, 1931)\cite{gibrat1931inégalités}, tanto la medición ideal propuesta como el logaritmo de la mediana de los ingresos son estimadores insesgados de $\mu$.

@@ -71,8 +71,8 @@ percentiles_ingresos_comp = percentiles_ingresos[
     np.array(percentiles_ingresos['reporting_level']=='national')
 ]
 
-muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,total,30)
-muestras_consumo = GenerarMuestra(percentiles_ingresos_comp,total,30)
+muestras_ingreso = GenerarMuestra(percentiles_ingresos_ni,total,20)
+muestras_consumo = GenerarMuestra(percentiles_ingresos_comp,total,20)
 
 import random
 def GenerarSeriesQuantilica(muestras, metrica, samples = 10):
@@ -141,7 +141,7 @@ muestra = muestras_consumo
 nombres =  ["Percentiles","Deciles","Quintiles","Total"]
 # estilos =  ['-','--','-.',':']
 
-xticks = list(range(2002,2022))
+xticks = list(range(1991,2022))
 xlabel_ticks = list(map(str, xticks))
 
 yticks_mayor = np.linspace(0.25,0.95,15)
