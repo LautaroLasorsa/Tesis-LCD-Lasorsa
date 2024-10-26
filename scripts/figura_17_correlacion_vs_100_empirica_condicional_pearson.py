@@ -75,9 +75,9 @@ estilos =  ['--','-.',':']
 xticks = list(range(1994,2022))
 xlabel_ticks = list(map(str, xticks))
 
-yticks_mayor = np.linspace(0.98,1,9)
+yticks_mayor = np.linspace(0.96,1,9)
 yticks_mayor_label = list(map(lambda x: f"{x:.4f}",yticks_mayor))
-yticks_menor = np.linspace(0.98,1,17)
+yticks_menor = np.linspace(0.96,1,17)
 
 fig, axs = plt.subplots(2,1, figsize=(24,20))
 fig.subplots_adjust(top=0.90) 

@@ -2,9 +2,30 @@
 
 En este cápitulo exploramos si las modificaciones propuestas en la medición del bienestar económico mejoran la capacidad de predicir otros indicadores socio económicos.
 
+\section{Hipotesis}
+
+El objetivo del presente cápitulo es intentar falsear \ref{hipo:4} utilizando datos disponibles.
+
+\begin{hipotesis}[Mejora del indicador]\label{hipo:4}
+    \\
+    Sea una metrica $M$ relacionada con el bienestar económico, la correlación entre $B_{100}$ y $M$ será mayor que entre las mediciones de menor granulariad $BE_{GNI}, BE_1, BE_5, BE_{10}$ con $M$, y también que la correlación entre $M$ y las mediciones alternativas existentes, $BE_I$ y $BE_M$
+\end{hipotesis}
+
+
 \section{Esperanza de Vida al Nacer (EVN)}
 
-Un índicador importante para evaluar el bienestar de una sociedad es la esperanza de vida al nacer (EVN), es decir la edad promedio de muerte durante ese año. Como presumimos que hay una relación entre el bienestar economico de un individuo y su esperanza de vida, entonces cabe esperar que mejorar nuestra capacidad de medir el bienestar economico llevaría a tener una variable más correlacionada con la EVN.
+Un índicador importante para evaluar el bienestar de una sociedad es la esperanza de vida al nacer (EVN) \cite{worldbank_health_data}, es decir la edad promedio de muerte durante ese año. 
+
+Podemos conjeturar que el bienestar economico se relaciona positivamente con la esperanza de vida al nacer, entre otros medios, mediante los sistemas de saneamiento y sanidad:
+
+\begin{itemize}
+    \item Un buen sistema de saneamiento (agua potable, cloacas, calles limpias, etc.) previene enfermedades.
+    \item Si las personas se enferman menos, podrán ser más productivas (aumenta el ingreso) y a su vez podrán vivir más años.
+    \item Si las personas tienen más ingresos, pueden destinar más recursos al cuidado de su salud (alimentación, atención médica), lo que a su vez también previene enfermedades y atiende enfermedades existentes.
+    \item Un mejor sístema de salud, al ser eficaz tratando enfermedades, tiene un efecto como el de un buen sístema de saneamiento (aunque sin tener necesariamente la misma intensidad).
+\end{itemize}
+
+Como presumimos que hay una relación entre el bienestar economico de un individuo y su esperanza de vida, entonces cabe esperar que mejorar nuestra capacidad de medir el bienestar economico llevaría a tener una variable más correlacionada con la EVN.
 
 Por esto, vamos a comparar la correlación de los indicadores actualmente existentes (incluyendo los alternativos) con los indicadores propuestos con distintas granularidades.
 
@@ -93,7 +114,56 @@ Algo muy llamativo ocurre en \ref{fig:21}, ya que al utilizar la correlación de
 \end{figure}
 
 
+Llegados a este punto, cabe observar que para el caso de la EVN, \ref{hipo:4} no se verifica, por los siguientes motivos:
+
+\begin{itemize}
+    \item No hay una mejora significativa entre las granularidades 5 y 100.
+    \item Las mediciones alternativas existentes, $BE_I$ y $BE_M$, tienen un desempeño similar a las mediciones propuestas en este trabajo.
+    \item No es consistentemente mejor que utilizar $BE_1$ o $BE_{GNI}$.
+\end{itemize}
+
+Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipotesis para otros conjuntos de datos, que es lo que haremos en la siguiente sección.
+
 \section{Otros indicadores}
 
-Utitizando la metrica comparativa finalmente desarrollada para el caso de la EVN, se aplica la misma metrica a otros indicadores socio economicos (ej: Alfabetización a los 15 años) para ver cómo se comportan es estos casos.
+\subsection{Años esperados de educación}
 
+Podemos conjeturar que los años esperados de educación de una sociedad tienen una correlación positiva con los ingresos porque:
+
+\begin{itemize}
+    \item La ya estudiada ecuación de Mincer (Mincer, 1958) \cite{mincer1958investment}: $$ ln(w) = \beta_0 + \beta_1 * educacion + \beta_2 * experiencia + \beta_3 * experiencia^2$$
+    \item Familias con mayores ingresos pueden destinar más recursos a la educación de sus hijos, y pueden postergar más el ingreso de los mismos al mercado laboral.  
+\end{itemize}
+
+Lo que podemos observar en \ref{fig:22} es que de hecho, la medición más correlacionada con los años de educación esperados es $BE_{GNI}$. 
+
+\subsection{suscripciones de celular cada 100 habitantes}
+
+Podemos conjeturar una relación, sobre todo para hace algunos años, entre el acceso a la telefonía celular y el bienestar económico dado que:
+
+\begin{itemize}
+    \item Los celulares son una herramienta que puede utilizarse para mejorar las comunicaciones, y por tanto la productividad.
+    \item Un mayor ingreso permite destinar más recursos a gastos no vitales, como una línea celular.
+    \item Es un proxy de la penetración de las TICs en la economía.
+\end{itemize}
+
+Lo llamativo que podemos observar en \ref{fig:23} es que, no solo el $BE_{GNI}$ es de forma consistente el mejor predictor, mientras que todas las demás mediciones tienen una performance similar, sino que hay una diferencia cualitativa entre las muestras de ingresos y de consumo.
+
+En las muestras de consumo se puede observar una estabilización alrededor de 0.5, y aunque hay una caida en la correlación al pasar los años, esta es mucho menos marcada. En cambio, en el caso de las encuestas de ingresos, se llega al punto de tener correlación negativa entre ambas variables (es decir, en los datos de 2021, un menor bienestar economico se asocia ligeramente a más redes de telefonía celular).
+
+Esta diferencia en las dinamicas es llamativa, y dispara preguntas que exceden el alcanza de esta tesis.
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_22_empirico_todas_vs_educacion.png} % Cambia el nombre del archivo
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar economico estudiadas y los años de educación esperados. \cite{worldbank_gender_data}}
+    \label{fig:22} % Etiqueta para referenciar
+\end{figure}
+
+
+\begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
+    \centering % Centra la figura
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_23_empirico_todas_vs_celulares.png} % Cambia el nombre del archivo
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar economico estudiadas y la cantidad de suscripciones de telefonía movil cada 100 habitantes. \cite{worldbank_gender_data}}
+    \label{fig:23} % Etiqueta para referenciar
+\end{figure}

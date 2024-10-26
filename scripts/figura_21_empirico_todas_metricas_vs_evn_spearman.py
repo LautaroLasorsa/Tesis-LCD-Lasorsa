@@ -98,8 +98,8 @@ estilos =  ['-','--','-.',':', (0,(2,3,1,2)), (0,(2,2,1,1,3,3)), (0,(3,1))]
 xticks = list(range(1994,2022))
 xlabel_ticks = list(map(str, xticks))
 
-yticks_mayor = np.linspace(0.55,0.9,8)
-yticks_menor = np.linspace(0.55,0.9,15)
+yticks_mayor = np.linspace(0.30,0.9,13)
+yticks_menor = np.linspace(0.30,0.9,25)
 
 def GenerarSeries(muestras, metrica):
     xs = list(sorted(muestras.keys()))

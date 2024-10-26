@@ -18,6 +18,7 @@
 \contentsline {subsection}{\numberline {2.6.1}Metodología}{7}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Ventajas}{7}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Desventajas}{7}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Consideraciones generales}{7}{section.2.7}%
 \contentsline {chapter}{\numberline {3.}Técnicas a utilizar}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Correlación de Pearson}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Correlaciones no lineales}{8}{section.3.2}%
@@ -35,5 +36,13 @@
 \contentsline {section}{\numberline {5.1}Datos disponibles}{17}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Distribución empirica}{18}{section.5.2}%
 \contentsline {chapter}{\numberline {6.}Datos reales: Mejora de la capacidad predictiva}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Esperanza de Vida al Nacer (EVN)}{21}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Otros indicadores}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.1}Hipotesis}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Esperanza de Vida al Nacer (EVN)}{21}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Otros indicadores}{29}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Años esperados de educación}{29}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}suscripciones de celular cada 100 habitantes}{29}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7.}Conclusiones}{32}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Conclusión principal}{32}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Otras conclusiones}{32}{subsection.7.0.2}%
+\contentsline {subsection}{\numberline {7.0.3}Falsasión de las hipotesis}{32}{subsection.7.0.3}%
+\contentsline {chapter}{\numberline {8.}Posibles trabajos futuros}{33}{chapter.8}%

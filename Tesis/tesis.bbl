@@ -4,13 +4,15 @@
 United Nations~Development Programme.
 \newblock Technical notes: Human development report 2023/24.
 \newblock Technical report, United Nations Development Programme (UNDP), 2023.
-\newblock Accessed: 2024-10-11,
-  \url{https://hdr.undp.org/sites/default/files/2023-24_HDR/hdr2023-24_technical_notes.pdf}.
+\newblock Disponible en:
+  \url{https://hdr.undp.org/sites/default/files/2023-24_HDR/hdr2023-24_technical_notes.pdf},
+  Accedido: 2024-10-11,.
 
 \bibitem{gibrat1931inégalités}
 R.~Gibrat.
 \newblock {\em Les in{\'e}galit{\'e}s {\'e}conomiques}.
 \newblock Sirey, 1931.
+\newblock \url{https://books.google.com.ar/books?id=m9fuoAEACAAJ}.
 
 \bibitem{lasorsa2024simluacion_cuda}
 Lautaro Lasorsa.
@@ -22,6 +24,27 @@ Lautaro Lasorsa.
 {World Bank}.
 \newblock Poverty and inequality platform (version
   20240627\_2017\_01\_02\_prod) [data set], 2024.
-\newblock World Bank Group. Available at: https://pip.worldbank.org/.
+\newblock World Bank Group. Disponible en: \url{https://pip.worldbank.org/}.
+
+\bibitem{worldbank_health_data}
+World Bank.
+\newblock Health, nutrition, and population statistics, 2024.
+\newblock Disponible en:
+  \texttt{https://databank.worldbank.org/source/health-nutrition-and-population-statistics}.
+  Accedido: 2024-10-17.
+
+\bibitem{mincer1958investment}
+Jacob Mincer.
+\newblock Investment in human capital and personal income distribution.
+\newblock {\em Journal of Political Economy}, 66(4):281--302, 1958.
+\newblock S2CID 153616441, Disponible en:
+  \texttt{https://www.jstor.org/stable/1827422}.
+
+\bibitem{worldbank_gender_data}
+World Bank.
+\newblock Expected years of school: Gender data portal indicator, 2024.
+\newblock World Bank Gender Data Portal. Disponible en:
+  \url{https://genderdata.worldbank.org/en/indicator/se-sch-life}. Accedido:
+  2024-10-17.
 
 \end{thebibliography}

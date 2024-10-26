@@ -4,46 +4,46 @@ The top-level auxiliary file: tesis.aux
 The style file: unsrt.bst
 Database file #1: tesis.bib
 Warning--entry type for "lasorsa2024simluacion_cuda" isn't style-file defined
---line 20 of file tesis.bib
-You've used 4 entries,
+--line 32 of file tesis.bib
+You've used 7 entries,
             1791 wiz_defined-function locations,
-            464 strings with 4195 characters,
-and the built_in function-call counts, 550 in all, are:
-= -- 46
-> -- 16
+            481 strings with 4892 characters,
+and the built_in function-call counts, 1044 in all, are:
+= -- 93
+> -- 28
 < -- 0
-+ -- 8
-- -- 4
-* -- 9
-:= -- 97
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 4
++ -- 14
+- -- 7
+* -- 28
+:= -- 173
+add.period$ -- 24
+call.type$ -- 7
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 26
-empty$ -- 68
-format.name$ -- 4
-if$ -- 124
+cite$ -- 7
+duplicate$ -- 45
+empty$ -- 128
+format.name$ -- 7
+if$ -- 236
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 2
-newline$ -- 24
-num.names$ -- 4
-pop$ -- 22
+int.to.str$ -- 7
+missing$ -- 3
+newline$ -- 41
+num.names$ -- 7
+pop$ -- 35
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 9
+skip$ -- 18
 stack$ -- 0
-substring$ -- 0
-swap$ -- 3
+substring$ -- 25
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 45
+while$ -- 9
+width$ -- 8
+write$ -- 80
 (There was 1 warning)
