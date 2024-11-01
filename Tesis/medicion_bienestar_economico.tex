@@ -1,16 +1,16 @@
-\chapter{Medición del Bienestar Ecónomico} \label{chapter:mediciones_bienestar_economico}
+\chapter{Medición del Bienestar Económico} \label{chapter:mediciones_bienestar_economico}
 
-En este cápitulo se presenta la problematica a tratar en la tésis, se motiva su estudio y se comparán las formas actuales de medirlo con las alternativas propuestas.
+En este capítulo se presenta la problemática a tratar en la tesis, se motiva su estudio y se comparan las formas actuales de medirlo con las alternativas propuestas.
 
 \section{Definición y motivación}
 
 \subsection{Definición}
 
-En este trabajo definiremos el bienestar económico (BE) de un individuo como la utilidad que obtiene de sus ingresos. Es decir, el valor que puede obtener de los recursos economicos, principalmente monetarios, de los que dispone.
+En este trabajo definiremos el bienestar económico (BE) de un individuo como la utilidad que obtiene de sus ingresos. Es decir, el valor que puede obtener de los recursos económicos, principalmente monetarios, de los que dispone.
 
 Sea $W$ el nivel de ingresos de un individuo, modelamos la utilidad que obtiene de esos ingresos como $U = log(W)$. Entonces, $BE = U(W) = log(W)$
 
-Es importante tener presente que si bien al definirlo como $BE = log(W)$ estamos dando una definición constructiva que nos permite calcularlo a partir de los datos recabados, esta es una aproximación que realizamos al concepto en base al comportamiento que esperamos que tenga:
+Es importante tener presente que si bien al definirlo como $BE = log(W)$ estamos dando una definición constructiva que nos permite calcularlo a partir de los datos recabados, está es una aproximación que realizamos al concepto en base al comportamiento que esperamos que tenga:
 
 \begin{itemize}
     \item \textbf{Es creciente}: Esperamos que un mayor ingreso cause un mayor bienestar económico en el inviduo que lo recibe. Formalmente, $W_1 \geq W_2 \rightarrow U(W_1) \geq U(W_2)$
@@ -20,19 +20,19 @@ Es importante tener presente que si bien al definirlo como $BE = log(W)$ estamos
     $$
 \end{itemize}
 
-Este es un comportamiento analogo a la especificación y la implementación de una función en programación, donde las expectativas que tenemos sobre el indicador (su definición conceptual) cumplen el rol de la especificación y la definición objetivamente medible cumple el rol de la implementación.
+Este es un comportamiento análogo a la especificación y la implementación de una función en programación, donde las expectativas que tenemos sobre el indicador (su definición conceptual) cumplen el rol de la especificación y la definición objetivamente medible cumple el rol de la implementación.
 
 \subsection{Motivación}
 
 La correcta medición del bienestar económico tiene diversas motivaciones, como por ejemplo:
 
 \begin{itemize}
-    \item Es un objeto de los objetos de estudio elementales de las ciencias económicas.
-    \item Permite medir el impacto de las politicas publicas.
-    \item Es un insumo para otras disciplinas y puede utilizarse como predictora de otras variables de interes.
+    \item Es uno de los objetos de estudio elementales de las ciencias económicas.
+    \item Permite medir el impacto de las políticas públicas.
+    \item Es un insumo para otras disciplinas y puede utilizarse como predictora de otras variables de interés.
 \end{itemize}
 
-De estas motivaciones puede deducirse que tiene tanto un valor intrinseco (por si mismo) como un valor instrumental, y que en conjunto vuelven a la correcta medición de este concepto un asunto de interes.
+De estas motivaciones puede deducirse que tiene tanto un valor intrínseco (por si mismo) como un valor instrumental, y que en conjunto vuelven a la correcta medición de este concepto un asunto de interés.
 
 Notar que al ser un concepto al cuál aproximamos con una definición constructiva, hay 2 aspectos independientes:
 
@@ -41,13 +41,13 @@ Notar que al ser un concepto al cuál aproximamos con una definición constructi
     \item La calidad de la medición de esta implementación.
 \end{itemize}
 
-De estos dos puntos, el presente trabajo propone posibles mejoras sobre el segundo basandose en la definición empirica ya explicada. Sin embargo, al estudiar la correlación entre el bienestar económico y otras variables, ambos puntos tendrán impacto aunque solo el segundo se estudie explicitamente.
+De estos dos puntos, el presente trabajo propone posibles mejoras sobre el segundo, basándose en la definición empírica ya explicada. Sin embargo, al estudiar la correlación entre el bienestar económico y otras variables, ambos puntos tendrán impacto aunque solo el segundo se estudie explicitamente.
 
 \section{Medición actual}
 
 \subsection{Metodología}
 
-La medición actual del $BE$, utilizada por ejemplo por el \textbf{Índice de Desarrollo Humano} \cite{undp2023tech_notes} (HDI por sus siglas en ingles, Human Development Index), es mediante el logaritmo del promedio de los íngresos.
+La medición actual del $BE$, utilizada por ejemplo por el \textbf{Índice de Desarrollo Humano} \cite{undp2023tech_notes} (HDI por sus siglas en inglés, Human Development Index), es mediante el logaritmo del promedio de los íngresos.
 
 En el caso puntual del HDI utiliza como insumo el GNI (Gross Domestic Income, Ingreso Nacional Bruto) a Paridad de Poder Adquisitivo (PPA, PPP en inglés). Es decir:
 
@@ -55,7 +55,7 @@ $$
     HDI_{income} = min(1, \frac{ln(GNI\ per\ capita) - ln(100)}{ln(75000)-ln(100)})
 $$
 
-Generalizandolo, dada una población de $N$ individuos, cuyos ingresos son $X_1, X_2, \dots, X_N$, la medición actual del bienestar ecónomico es:
+Generalizándolo, dada una población de $N$ individuos, cuyos ingresos son $X_1, X_2, \dots, X_N$, la medición actual del bienestar económico es:
 
 $$
     BE(X) = log(\frac{1}{N} * \sum_{i=1}^{N}X_i)
@@ -63,23 +63,23 @@ $$
 
 \subsection{Ventajas}
 
-La principal ventaja de este metodo es a nivel logistico, dado que calcula el $BE$ en base a una colección de datos que pueden ser calculados o estimados de forma independiente:
+La principal ventaja de este método es a nivel logístico, dado que calcula el $BE$ en base a una colección de datos que pueden ser calculados o estimados de forma independiente:
 
 \begin{itemize}
-    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive puede ser posible calcular de forma separada el GNI nomial y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monterio de los bienes y servicios. 
+    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive es posible calcular de forma separada el GNI nomial y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monterio de los bienes y servicios. 
     \item \textbf{Población}: La población de esa economía durante ese año. Usualmente se utiliza la cantidad de población a mitad del año.
 \end{itemize}
 
-Al ser estas metricas (GNI, deflactor, población) ya calculadas por tener interes en sí mismas, no supone una dificultad adicional obtener esta metrica derivada. Adicionalmente, es una metodología confiable ya que su confianza se deriva de la confianza que tenemos en la capacidad de medir las metricas base.
+Al estar estas métricas (GNI, deflactor, población) ya calculadas por tener interés en sí mismas, no supone una dificultad adicional obtener esta métrica derivada. Adicionalmente, es una metodología confiable ya que su confianza se deriva de la confianza que tenemos en la capacidad de medir las métricas base.
 
-Además, las metricas base que se utilizán para calcular esta metrica tienen la ventaja adicional de ser valores aditivos. Es decir, cada uno de estos puede ser medido de forma independiente en subdivisiones de la economía a estudiar (por ejemplo las provincias de un país, y dentro de estas los municipios) y luego simplemente sumar las cantidades medidas por cada subdivisión para obtener la cantidad correspondiente al total de la economía. 
+Además, las métricas base que se utilizan para calcular esta métrica tienen la ventaja adicional de ser valores aditivos. Es decir, cada uno de estos puede ser medido de forma independiente en subdivisiones de la economía a estudiar (por ejemplo las provincias de un país, y dentro de estas los municipios) y luego simplemente sumar las cantidades medidas por cada subdivisión para obtener la cantidad correspondiente al total de la economía. 
 
-A su vez, cómo el GNI se pueden descomponer en distintos componentes, estos componentes pueden calcularse independientemente.
+A su vez, como el GNI se pueden descomponer en distintos componentes, estos componentes pueden calcularse independientemente.
 
 Se puede hacer esto utilizando que $GNI = GDP + EX_{net}$, donde:
 \begin{itemize}
     \item GDP (Gross Domestic Product, Producto Interior Bruto) es la producción total de bienes y servicios en el país
-    \item $EX_{net}$ es el neto de pagos y transferencisa (salvo importaciones y exportaciones, que se incluyen en el GDP) hacia el exterior (donde el signo positivo índica que a la economía ingreso más dinero del que salió)
+    \item $EX_{net}$ es el neto de pagos y transferencias (salvo importaciones y exportaciones, que se incluyen en el GDP) hacia el exterior (donde el signo positivo indica que a la economía ingresó más dinero del que salió)
 \end{itemize}
 
 Y a su vez podemos descomponer al principal sumando, el GDP, en sus componentes de dos maneras distintas, utilizando la Perspectiva de los Gastos y la Perspectiva de los ingresos.
@@ -92,7 +92,7 @@ $$
 
 Donde:
 \begin{itemize}
-    \item C = consumo
+    \item C = Consumo
     \item I = Inversión
     \item G = Gasto del gobierno
     \item X = Exportaciones
@@ -112,39 +112,39 @@ Donde:
     \item R = Rentas (alquileres)
     \item I = Intereses
     \item II = Impuestos Indirectos (ejemplo: IVA)
-    \item D = Depreciación de bienes de cápital
+    \item D = Depreciación de bienes de capital
     \item SU = Subsidios
 \end{itemize}
 
 El tener estos dos enfoques permite:
 
 \begin{itemize}
-    \item Descomponer el calculo del GNI en muchas variables chicas que se pueden medir de forma especializada y tienen interes en si mismo. Por tanto, se vuelve en si mismo una estadistica derivada de otras.
-    \item Al tener 2 metodos independientes de calcular el GDP, que es el factor más importante en el computo del GNI, es posible detectar y corregir errores e inconsistencias en las mediciones.
+    \item Descomponer el cálculo del GNI en muchas variables chicas que se pueden medir de forma especializada y tienen interés en sí mismas. Por tanto, se vuelve en sí mismo una estadística derivada de otras.
+    \item Al tener 2 métodos independientes de calcular el GDP, que es el factor más importante en el computo del GNI, es posible detectar y corregir errores e inconsistencias en las mediciones.
 \end{itemize}
 
-En sintesis, la medición actualmente utilizada supone una gran cantidad de ventajas en matería logistica y de ser consecuencia de otra bateria de mediciones con interes en si mismas.
+En síntesis, la medición actualmente utilizada supone una gran cantidad de ventajas en materia lógistica y de ser consecuencia de otra batería de mediciones con interés en si mismas.
 
 \subsection{Desventajas}
 
-Hay un primer problema que podemos observar en esta metodología y es que el GNI incluye también los ingresos empresariales y del gobierno, mientras que el $BE$ lo definimos a nivel de individuos y sus ingresos personales. Sin embargo, como las empresas y gobieros pueden utilizar estos recursos para proveer bienes y servicios a las personas (que a estas no se les imputan dentro de sus ingresos personales, por ejemplo la educación pública no arancelada), este alejamiento de la definición que dimos originalmente puede permitir capturar mejor el bienestar económico de una sociedad. 
+Hay un primer problema que podemos observar en esta metodología y es que el GNI incluye también los ingresos empresariales y del gobierno, mientras que el $BE$ lo definimos a nivel de individuos y sus ingresos personales. Sin embargo, como las empresas y gobiernos pueden utilizar estos recursos para proveer bienes y servicios a las personas (que a estas no se les imputan dentro de sus ingresos personales, por ejemplo la educación pública no arancelada), este alejamiento de la definición que dimos originalmente puede permitir capturar mejor el bienestar económico de una sociedad. 
 
-Sin embargo, hay otro problema que en principio es más importante a tener en cuenta. La utilidad marginal decreciente aplica en los ingresos de cada individuo y no en los ingresos agregados de la sociedad. Por tanto, es importante aplicar la función de utilidad ($U$, en teste caso $log$) a los ingresos de cada individuo y no al promedio de los ingresos. Y lo importante es que \textbf{el logaritmo del promedio no es el promedio de los logaritmos}
+Sin embargo, hay otro problema que en principio es más importante a tener en cuenta. La utilidad marginal decreciente se aplica en los ingresos de cada individuo y no en los ingresos agregados de la sociedad. Por tanto, es importante aplicar la función de utilidad ($U$, en este caso $log$) a los ingresos de cada individuo y no al promedio de los ingresos. Y lo importante es que \textbf{el logaritmo del promedio no es el promedio de los logaritmos}
 
 Es esta última desventaja la que este trabajo busca subsanar proponiendo una medición alternativa, y a su vez evaluar que mejoras ofrece dicha alternativa frente a la metodogía actual.
 
 \section{Medición alternativa actual: Corrección por desigualdad}
 
-Reconociendo que una de las falencias del metodo para calcular el HDI es la insensibilidad frente a la desigualdad, el informe de la UNDP (United Nations Development Programme) también incluye el $IHDI$ (Índice de Desarrollo Humano ajustado por Desigualdad). En este se define una métrica de penalización para cada indicador:
+Reconociendo que una de las falencias del método para calcular el HDI es la insensibilidad frente a la desigualdad, el informe de la UNDP (United Nations Development Programme) también incluye el $IHDI$ (Índice de Desarrollo Humano ajustado por Desigualdad). En este se define una métrica de penalización para cada indicador:
 $$
     A_X = 1 - \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i}
 $$
 
-Así, si el PBI PPA per cápita de un país en el año 2024 fue $X$, su puntaje de ingresos para el $HDI$ sería $ HDI_{income} = min(1, \frac{(log(X)-log(100))}{(log(75000)-log(100))})$, y su puntaje de ingresos para el $IHDI$ sería $IHDI_{income} = (1-A_{income}) * HDI_{income}$
+Así, si el GNI PPP per cápita de un país en el año 2024 fue $X$, su puntaje de ingresos para el $HDI$ sería $ HDI_{income} = min(1, \frac{(log(X)-log(100))}{(log(75000)-log(100))})$, y su puntaje de ingresos para el $IHDI$ sería $IHDI_{income} = (1-A_{income}) * HDI_{income}$
 
-El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exogena) de la misma y no como una consecuencia natural (endogena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos.
+El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exógena) de la misma y no como una consecuencia natural (endógena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos.
 
-Generalización, esta genera una métrica tal que :
+Generalizando, esta genera una métrica tal que :
 
 $$
     BE_I(X) = \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i} * log(\frac{1}{N} * \sum_{i=1}^{N}X_i)
@@ -154,7 +154,7 @@ $$
 
 \section{Medición alternativa actual: Mediana de los ingresos}
 
-Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este índicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de a aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
+Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este indicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de a aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
 
 Generalizando, esto resulta en:
 
@@ -176,22 +176,22 @@ $$
 
 \subsection{Ventajas}
 
-Es la medición exacta de la definición que propusimos de Bienestar Económico. Por tanto, es la mejor aproximación a dicho concepto. Lo que tiene especial sentido si pensamos que los ingresos son un instrumento para obtener bienestar y no el bienestar en si mismo, y eso es lo que se busca reflejar al aplicarles una función de utilidad distinta de la identidad.
+Es la medición exacta de la definición que propusimos de Bienestar Económico. Por tanto, es la mejor aproximación a dicho concepto. Lo que tiene especial sentido si pensamos que los ingresos son un instrumento para obtener bienestar y no el bienestar en sí mismo, y eso es lo que se busca reflejar al aplicarles una función de utilidad distinta de la identidad.
 
 
-Adicionalmente, al contemplar que un aumento en los ingresos de individuos que ya tienen altos ingresos les genera un menor beneficio marginal que aumentar en la misma cantidad absoluta los ingresos de individuos de menores ingresos, esta metrica refleja le eficiencia de la distribución del ingreso en una sociedad.
+Adicionalmente, al contemplar que un aumento en los ingresos de individuos que ya tienen altos ingresos les genera un menor beneficio marginal que aumentar en la misma cantidad absoluta los ingresos de individuos de menores ingresos, esta métrica refleja la eficiencia de la distribución del ingreso en una sociedad.
 
-De esta forma, esta metrica premia simultaneamente un aumento de la productividad de una ecónomia como una distribución más eficiente de la misma.
+De esta forma, esta metrica premia simultaneamente un aumento de la productividad de una economía como una distribución más eficiente de la misma.
 
 \subsection{Desventajas}
 
-La principal desventaja de esta metodología es la contracara de la ventaja de la metodología actual, la logistica. En este caso llega al punto de la infactibilidad, puesto que para poder realizar el calculo propuesto es necesario conocer los ingresos de cada uno de los individuos, algo que es logisticamente imposible.
+La principal desventaja de esta metodología es la contracara de la ventaja de la metodología actual, la logística. En este caso llega al punto de la infactibilidad, puesto que para poder realizar el cálculo propuesto es necesario conocer los ingresos de cada uno de los individuos, algo que es logisticamente imposible.
 
 \section{Propuesta de mejora: Mediciones aproximadas}
 
 \subsection{Metodología}
 
-Debido a la imposibilidad factica de aplicar la metodología ideal propuesta en este trabajo, es necesario buscar aproximaciones con los datos disponibles.
+Debido a la imposibilidad fáctica de aplicar la metodología ideal propuesta en este trabajo, es necesario buscar aproximaciones con los datos disponibles.
 
 De esta forma podemos introducir el concepto de \textbf{Granularidad} de una medición, $G$.
 
@@ -209,16 +209,16 @@ Esta metodología tiene, parcialmente, las ventajas tanto de la metodología ide
 
 \begin{itemize}
     \item $\exists G>1$ para el cuál la metodología es logisitcamente factible. Puede calcularse en base a encuestas de ingresos como la EPH (Encuesta Permanente de Hogares).
-    \item Modera más que $BE_1$ el impacto de los outliers (ultra ricos) en la medición del bienestar ecónomico, ya que solo impactan de forma líneal en el último de los $G$ grupos en los que se divide la población.
+    \item Modera más que $BE_1$ el impacto de los outliers (ultra ricos) en la medición del bienestar económico, ya que solo impactan de forma líneal en el último de los $G$ grupos en los que se divide la población.
 \end{itemize}
 
 \subsection{Desventajas}
 
-Tiene la desventaja de ser una solución de compromiso, y justamente parte del interes de este trabajo es ver, para valores logisticamente factibles de $G$, cuál es la diferencia entre $BE_G$ y $BE_N$.
+Tiene la desventaja de ser una solución de compromiso, y justamente parte del interés de este trabajo es ver, para valores logisticamente factibles de $G$, cuál es la diferencia entre $BE_G$ y $BE_N$.
 
 \section{Consideraciones generales}
 
 
-Todas las metodologías propuestas coinciden para una sociedad con una distribución perfectamente igualitaría de los ingresos.
+Todas las metodologías propuestas coinciden para una sociedad con una distribución perfectamente igualitaria de los ingresos.
 
 A su vez, si asumimos que los ingresos tienen una distribución log-normal $LN(\mu,\sigma^2)$, como sugiere (Gibrat, 1931)\cite{gibrat1931inégalités}, tanto la medición ideal propuesta como el logaritmo de la mediana de los ingresos son estimadores insesgados de $\mu$.

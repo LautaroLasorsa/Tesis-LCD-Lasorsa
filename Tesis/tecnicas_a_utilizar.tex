@@ -1,10 +1,10 @@
 \chapter{Técnicas a utilizar} \label{chapter:tecnicas_a_utilizar}
 
-En este cápitulo se explicarán las técnicas que se utilizarán a lo largo del trabajo para analizar los datos, tanto sinteticos como reales, y obtener conclusiones de los mismos.
+En este capítulo se explicarán las técnicas que se utilizarán a lo largo del trabajo para analizar los datos, tanto sintéticos como reales, y obtener conclusiones de los mismos.
 
 \section{Correlación de Pearson}
 
-El coeficiente de correlación de Pearson se utiliza para medir la similitud líneal entre 2 variables. Se define como:
+El coeficiente de correlación de Pearson se utiliza para medir la similitud lineal entre 2 variables. Se define como:
 
 $$
     r(X,Y) = \frac{Cov(X,Y)}{\sigma_X * \sigma_Y}
@@ -19,12 +19,12 @@ Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_
             \item $$ R^2 = (r(X,Y))^2 $$
         \end{itemize}
 
-        Es decir, captura la capacidad predictiva (en sentido estadistico) del modelo líneal $Y = \alpha * X + \beta$
-    \item Podemos tratar a $L^2$ (variables aleatorias con segundo momento finito) como un espacio vectorial euclideo donde:
+        Es decir, captura la capacidad predictiva (en sentido estadístico) del modelo lineal $Y = \alpha * X + \beta$
+    \item Podemos tratar a $L^2$ (variables aleatorias con segundo momento finito) como un espacio vectorial euclídeo donde:
         \begin{itemize}
             \item $Cov(X,Y)$ es el producto interno entre $X$ e $Y$
             \item $Var(X) = Cov(X,X)$ es la norma cuadrada de $X$. Analogamente, $std(X) = \sigma_X = ||X||$
-            \item $ r(X,Y) = \frac{<X,Y>}{||X|| * ||Y||} $ es el coseno del angulo entre $X$ e $Y$.
+            \item $ r(X,Y) = \frac{<X,Y>}{||X|| * ||Y||} $ es el coseno del ángulo entre $X$ e $Y$.
         \end{itemize}
 
         Esto reafirma su interpretación como medida de similitud entre las variables.
@@ -33,7 +33,7 @@ Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_
 
 \section{Correlaciones no lineales}
 
-Notar que la correlación de Pearson solo captura relaciones líneales entre las variables, y si quieremos capturar otras posibles relaciones (por ejemplo, $Y = log(X)$) corresponde utilizar otras metricas, como son la correlación de Spearman y la $\tau$ de Kendall.
+Notar que la correlación de Pearson solo captura relaciones lineales entre las variables, y si quieremos capturar otras posibles relaciones (por ejemplo, $Y = log(X)$) corresponde utilizar otras métricas, como son la correlación de Spearman y la $\tau$ de Kendall.
 
 \subsection{Correlación de Spearman}
 
@@ -64,8 +64,8 @@ $$
 
 \section{Bootstrap}
 
-Bootstrap es una tecnica que consiste en utilizar los datos de una muestra para estimar la distribución de la misma, en base a esa estimación generar datos sinteticos y estudiar sobre esos datos sinteticos la distribución del indicador de interes.
+Bootstrap es una técnica que consiste en utilizar los datos de una muestra para estimar la distribución de la misma, en base a esa estimación generar datos sínteticos y estudiar sobre esos datos sinteticos la distribución del indicador de interes.
 
-En el caso de este trabajo se utilizará bootstrap no parametrico de la siguiente forma:
+En el caso de este trabajo se utilizará bootstrap no parámetrico de la siguiente forma:
 
-Dada una muestra $M$ de $N$ individuos $M_1, M_2, \dots, M_N$, una nueva muestra se generará tomando $N$ elementos de $M$ con reposición (es decir, al seleccionar un elemento de $M$ para incluirlo en nuestra nueva muestra, no lo eliminamos de $M$), y aplicamos el índicador (por ejemplo, la correlación entre 2 dimensiones de los individuos) a la población simulada. 
+Dada una muestra $M$ de $N$ individuos $M_1, M_2, \dots, M_N$, una nueva muestra se generará tomando $N$ elementos de $M$ con reposición (es decir, al seleccionar un elemento de $M$ para incluirlo en nuestra nueva muestra, no lo eliminamos de $M$), y aplicamos el indicador (por ejemplo, la correlación entre 2 dimensiones de los individuos) a la población simulada. 

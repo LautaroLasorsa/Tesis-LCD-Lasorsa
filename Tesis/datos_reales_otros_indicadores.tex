@@ -1,31 +1,31 @@
 \chapter{Datos reales: Mejora de la capacidad predictiva} \label{chapter:datos_reales_otros_indicadores}
 
-En este cápitulo exploramos si las modificaciones propuestas en la medición del bienestar económico mejoran la capacidad de predicir otros indicadores socio económicos.
+En este capítulo exploramos si las modificaciones propuestas en la medición del bienestar económico mejoran la capacidad de predicir otros indicadores socio económicos.
 
-\section{Hipotesis}
+\section{Hipótesis}
 
-El objetivo del presente cápitulo es intentar falsear \ref{hipo:4} utilizando datos disponibles.
+El objetivo del presente capítulo es intentar falsear \ref{hipo:4} utilizando datos disponibles.
 
 \begin{hipotesis}[Mejora del indicador]\label{hipo:4}
     \\
-    Sea una metrica $M$ relacionada con el bienestar económico, la correlación entre $B_{100}$ y $M$ será mayor que entre las mediciones de menor granulariad $BE_{GNI}, BE_1, BE_5, BE_{10}$ con $M$, y también que la correlación entre $M$ y las mediciones alternativas existentes, $BE_I$ y $BE_M$
+    Sea una métrica $M$ relacionada con el bienestar económico, la correlación entre $B_{100}$ y $M$ será mayor que entre las mediciones de menor granulariad $BE_{GNI}, BE_1, BE_5, BE_{10}$ con $M$, y también que la correlación entre $M$ y las mediciones alternativas existentes, $BE_I$ y $BE_M$
 \end{hipotesis}
 
 
 \section{Esperanza de Vida al Nacer (EVN)}
 
-Un índicador importante para evaluar el bienestar de una sociedad es la esperanza de vida al nacer (EVN) \cite{worldbank_health_data}, es decir la edad promedio de muerte durante ese año. 
+Un indicador importante para evaluar el bienestar de una sociedad es la esperanza de vida al nacer (EVN) \cite{worldbank_health_data}, es decir la edad promedio de muerte durante ese año. 
 
-Podemos conjeturar que el bienestar economico se relaciona positivamente con la esperanza de vida al nacer, entre otros medios, mediante los sistemas de saneamiento y sanidad:
+Podemos conjeturar que el bienestar económico se relaciona positivamente con la esperanza de vida al nacer, entre otros medios, mediante los sistemas de saneamiento y sanidad:
 
 \begin{itemize}
     \item Un buen sistema de saneamiento (agua potable, cloacas, calles limpias, etc.) previene enfermedades.
     \item Si las personas se enferman menos, podrán ser más productivas (aumenta el ingreso) y a su vez podrán vivir más años.
     \item Si las personas tienen más ingresos, pueden destinar más recursos al cuidado de su salud (alimentación, atención médica), lo que a su vez también previene enfermedades y atiende enfermedades existentes.
-    \item Un mejor sístema de salud, al ser eficaz tratando enfermedades, tiene un efecto como el de un buen sístema de saneamiento (aunque sin tener necesariamente la misma intensidad).
+    \item Un mejor sistema de salud, al ser eficaz tratando enfermedades, tiene un efecto como el de un buen sistema de saneamiento (aunque sin tener necesariamente la misma intensidad).
 \end{itemize}
 
-Como presumimos que hay una relación entre el bienestar economico de un individuo y su esperanza de vida, entonces cabe esperar que mejorar nuestra capacidad de medir el bienestar economico llevaría a tener una variable más correlacionada con la EVN.
+Como presumimos que hay una relación entre el bienestar económico de un individuo y su esperanza de vida, entonces cabe esperar que mejorar nuestra capacidad de medir el bienestar económico lleve a tener una variable más correlacionada con la EVN.
 
 Por esto, vamos a comparar la correlación de los indicadores actualmente existentes (incluyendo los alternativos) con los indicadores propuestos con distintas granularidades.
 
@@ -33,32 +33,32 @@ Por esto, vamos a comparar la correlación de los indicadores actualmente existe
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_6_pearson_ingreso_consumo_esp_vida_total.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles}
+    \caption{Correlación de Pearson entre entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles}
     \label{fig:6} % Etiqueta para referenciar
 \end{figure}
 
 Como puede verse en \ref{fig:6}, la capacidad predictiva de los ingresos empeora en los últimos años, mientras que la del consumo mejora. A su vez, el beneficio de mejorar la granularidad parece agotarse al pasar de 1 a 5 grupos, ya que tomar quintiles, deciles o percentiles da un resultado similar.
 
-A su vez, podemos utilizar bootstrap no parametrico para estimar la varianza que tendría esta correlación en base a la muestra dada, como puede verse en \ref{fig:7}, de la cuál podemos extraer dos primeras observaciones importantes:
+A su vez, podemos utilizar bootstrap no parámetrico para estimar la varianza que tendría esta correlación en base a la muestra dada, como puede verse en \ref{fig:7}, de la cual podemos extraer dos primeras observaciones importantes:
 
 \begin{itemize}
-    \item Utilizando las muestras de ingreso el rango inter-cuartilico de los indicadores es mucho menor.
-    \item Los cuartiles y medianas de las distribuciones de las correlaciones se comportán de forma similar entre si, y similares a lo observado con la muestra original.
+    \item Utilizando las muestras de ingreso el rango inter-cuartílico de los indicadores es mucho menor.
+    \item Los cuartiles y medianas de las distribuciones de las correlaciones se comportan de forma similar entre si, y similares a lo observado con la muestra original.
 \end{itemize}
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_7_pearson_ingreso_consumo_esp_vida_total_bootstrap.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre entre entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no parametrico con 1.000 remuestreos para estimar el rango inter-cuartilico condicional}
+    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
     \label{fig:7} % Etiqueta para referenciar
 \end{figure}
 
-Como puede observarse en \ref{fig:8} y \ref{fig:9}, lo dicho anteriormente se preserva utilizando metricas de correlación no líneal como Spearman y Kendall.
+Como puede observarse en \ref{fig:8} y \ref{fig:9}, lo dicho anteriormente se preserva utilizando métricas de correlación no lineal como Spearman y Kendall.
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_8_ingresos_evn_no_lineal.png} % Cambia el nombre del archivo
-    \caption{Correlación de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empiricos, condicionado por año, para las muestras de ingresos. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no parametrico con 1.000 remuestreos para estimar el rango inter-cuartilico condicional}
+    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empricos, condicionadas por año, para las muestras de ingresos. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
     \label{fig:8} % Etiqueta para referenciar
 \end{figure}
 
@@ -67,17 +67,17 @@ Como puede observarse en \ref{fig:8} y \ref{fig:9}, lo dicho anteriormente se pr
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_9_consumo_evn_no_lineal.png} % Cambia el nombre del archivo
-    \caption{Correlación de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empiricos, condicionado por año, para las muestras de consumo. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no parametrico con 1.000 remuestreos para estimar el rango inter-cuartilico condicional}
+    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionadas por año, para las muestras de consumo. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
     \label{fig:9} % Etiqueta para referenciar
 \end{figure}
 
-Lo que puede apreciarse en \ref{fig:19} y \ref{fig:20} es que, comparando las metricas propuestas con el uso del GNI per capita y con las metricas alternativas existentes:
+Lo que puede apreciarse en \ref{fig:19} y \ref{fig:20} es que, comparando las métricas propuestas con el uso del GNI per capita y con las métricas alternativas existentes:
 
 
 \begin{itemize}
     \item  Para los países con encuestas de ingresos, el GNI tiene un comportamiento ligeramente mejor al principio de la serie y luego pasa a ser ligramente peor.
-    \item Para los países con encuesta sde consumo, el GNI tiene un comportamiento mucho peor que para los que tienen encuestas de ingresos, y comparado con las demás metricas (salvo la mediana), aunque hay años en los que es superior, tiene un piso de predictividad notablemente menor y en general tiene un peor desempeño.
-    \item El GNI per cápita corregido por desigualdad y el logaritmo de la mediana de los ingresos tienen un desempeño similar a las metricas propuestas.
+    \item Para los países con encuestas de consumo, el GNI tiene un comportamiento mucho peor que para los que tienen encuestas de ingresos, y comparado con las demás métricas, aunque hay años en los que es superior, tiene un piso de predictividad notablemente menor y en general tiene un peor desempeño.
+    \item El GNI per cápita corregido por desigualdad y el logaritmo de la mediana de los ingresos tienen un desempeño similar a las métricas propuestas.
     \item Se mantiene lo observado en las figuras anteriores, los cuantiles estimados con bootstrap se comprtan de forma similar a los datos observados.
 \end{itemize}
 
@@ -85,31 +85,31 @@ Lo que puede apreciarse en \ref{fig:19} y \ref{fig:20} es que, comparando las me
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_19_empirico_todas_metricas_vs_evn_pearson.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre entre entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
+    \caption{Correlación de Pearson entre  utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
     \label{fig:19} % Etiqueta para referenciar
 \end{figure}
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_20_empirico_todas_metricas_vs_evn_pearson_bootstrap.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre entre entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no parametrico con 1.000 remuestreos para estimar el rango inter-cuartilico condicional}
+    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
     \label{fig:20} % Etiqueta para referenciar
 \end{figure}
 
 
 El hecho de que en distintos años cambie sustancialmente la capacidad predictiva de los indicadores, y especialmente el hecho de que el GNI per cápita tenga distinta capacidad predicitva para distintas muestras de un mismo año, lleva a pensar que el hecho de que un país utilice encuestas de ingresos o de consumo tiene relación con al menos uno de los siguientes aspectos:
 \begin{itemize}
-    \item La calidad de las estadisticas
+    \item La calidad de las estadísticas
     \item La capacidad de los ingresos de impactar en la esperanza de vida
 \end{itemize}
 
 
-Algo muy llamativo ocurre en \ref{fig:21}, ya que al utilizar la correlación de Spearman (no líneal), la calidad predictora de la mediana de los ingresos se equipara a las demás metricas, salvo GNI sin corrección. Este último parece comportarse algo mejor para países con encuestas de ingresos y considerablemente peor para países con encuestas de consumo.
+En \ref{fig:21} puede verse que los comportamientos antes descriptos se conservan utilizando la correlación de Spearman.
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_21_empirico_todas_metricas_vs_evn_spearman.png} % Cambia el nombre del archivo
-    \caption{Correlación de Spearman entre entre entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empiricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
+    \caption{Correlación de Spearman entre entre entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
     \label{fig:21} % Etiqueta para referenciar
 \end{figure}
 
@@ -122,7 +122,7 @@ Llegados a este punto, cabe observar que para el caso de la EVN, \ref{hipo:4} no
     \item No es consistentemente mejor que utilizar $BE_1$ o $BE_{GNI}$.
 \end{itemize}
 
-Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipotesis para otros conjuntos de datos, que es lo que haremos en la siguiente sección.
+Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipótesis para otros conjuntos de datos, que es lo que haremos en la siguiente sección.
 
 \section{Otros indicadores}
 
@@ -137,7 +137,7 @@ Podemos conjeturar que los años esperados de educación de una sociedad tienen 
 
 Lo que podemos observar en \ref{fig:22} es que de hecho, la medición más correlacionada con los años de educación esperados es $BE_{GNI}$. 
 
-\subsection{suscripciones de celular cada 100 habitantes}
+\subsection{Suscripciones de celular cada 100 habitantes}
 
 Podemos conjeturar una relación, sobre todo para hace algunos años, entre el acceso a la telefonía celular y el bienestar económico dado que:
 
@@ -149,14 +149,14 @@ Podemos conjeturar una relación, sobre todo para hace algunos años, entre el a
 
 Lo llamativo que podemos observar en \ref{fig:23} es que, no solo el $BE_{GNI}$ es de forma consistente el mejor predictor, mientras que todas las demás mediciones tienen una performance similar, sino que hay una diferencia cualitativa entre las muestras de ingresos y de consumo.
 
-En las muestras de consumo se puede observar una estabilización alrededor de 0.5, y aunque hay una caida en la correlación al pasar los años, esta es mucho menos marcada. En cambio, en el caso de las encuestas de ingresos, se llega al punto de tener correlación negativa entre ambas variables (es decir, en los datos de 2021, un menor bienestar economico se asocia ligeramente a más redes de telefonía celular).
+En las muestras de consumo se puede observar una estabilización alrededor de 0.5, y aunque hay una caída en la correlación al pasar los años, esta es mucho menos marcada. En cambio, en el caso de las encuestas de ingresos, se llega al punto de tener correlación negativa entre ambas variables (es decir, en los datos de 2021, un menor bienestar económico se asocia ligeramente a más líneas de telefonía celular).
 
-Esta diferencia en las dinamicas es llamativa, y dispara preguntas que exceden el alcanza de esta tesis.
+Esta diferencia en las dinámicas es llamativa, y dispara preguntas que exceden el alcanza de esta tesis.
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_22_empirico_todas_vs_educacion.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar economico estudiadas y los años de educación esperados. \cite{worldbank_gender_data}}
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y los años de educación esperados. \cite{worldbank_gender_data}}
     \label{fig:22} % Etiqueta para referenciar
 \end{figure}
 
@@ -164,6 +164,6 @@ Esta diferencia en las dinamicas es llamativa, y dispara preguntas que exceden e
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_23_empirico_todas_vs_celulares.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar economico estudiadas y la cantidad de suscripciones de telefonía movil cada 100 habitantes. \cite{worldbank_gender_data}}
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y la cantidad de suscripciones de telefonía móvil cada 100 habitantes. \cite{worldbank_gender_data}}
     \label{fig:23} % Etiqueta para referenciar
 \end{figure}

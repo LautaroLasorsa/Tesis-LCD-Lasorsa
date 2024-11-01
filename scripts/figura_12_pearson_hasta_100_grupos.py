@@ -31,6 +31,6 @@ plt.xticks(range(1,11), sg.groups.keys())
 plt.xlabel("$\sigma^2$")
 plt.ylabel("Pearson")
 plt.legend(ncol=3, title="Número grupos")
-plt.title("$\sigma^2$ y correlación entre frente a usar 100 grupos")
+plt.title("$\sigma^2$ y correlación entre $BE_{G_i}$ y $BE_N$")
 
 plt.savefig("../figuras/figura_12_pearson_hasta_100_grupos.png",bbox_inches='tight')

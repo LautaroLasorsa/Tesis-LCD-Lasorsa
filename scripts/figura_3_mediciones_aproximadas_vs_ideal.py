@@ -21,7 +21,7 @@ plt.plot(list(reversed(columnas[1:])),
 plt.grid()
 plt.xlabel("Número de grupos", fontsize=14)
 plt.ylabel("Correlación lineal con valor idealmente medido", fontsize=14)
-plt.title("Midiciones aproxiadas vs Medición ideal", fontsize=24)
+plt.title("Mediciones aproximadas vs Medición ideal", fontsize=24)
 plt.xticks(rotation = 90)
 plt.legend(fontsize=16)
 plt.savefig("../figuras/figura_3_mediciones_aproximadas_vs_ideal.png", bbox_inches='tight', dpi = 400)
