@@ -14,7 +14,7 @@ observaciones = list(zip(*[Test(datos_varianzas, var) for var in datos_varianzas
 plt.figure(figsize = (30,13))
 plt.plot(range(len(observaciones),0,-1),list(observaciones), '-o', linewidth=5)
 plt.xlabel("Número de grupos", fontsize=24)
-plt.ylabel("Correlacion lineal con valor idealmente medido", fontsize=24)
+plt.ylabel("Correlación lineal con valor idealmente medido", fontsize=24)
 plt.title("Mediciones aproximadas vs ideales con distintas varianzas",fontsize=30)
 plt.xticks(range(len(observaciones),0,-1), labels=[1000000//x for x in interes], rotation = 0, fontsize=22)
 plt.yticks(list(np.linspace(0,1,21)), minor=True)
