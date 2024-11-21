@@ -12,7 +12,7 @@ El objetivo del presente capítulo es intentar falsear \ref{hipo:4} utilizando d
 \end{hipotesis}
 
 
-\section{Esperanza de Vida al Nacer (EVN)}
+\section{Esperanza de Vida al Nacer (EVN)} \label{section:esperanza_vida_nacer}
 
 Un indicador importante para evaluar el bienestar de una sociedad es la esperanza de vida al nacer (EVN) \cite{worldbank_health_data}, es decir la edad promedio de muerte durante ese año. 
 
@@ -75,7 +75,7 @@ Lo que puede apreciarse en \ref{fig:19} y \ref{fig:20} es que, comparando las m�
 
 
 \begin{itemize}
-    \item  Para los países con encuestas de ingresos, el GNI tiene un comportamiento ligeramente mejor al principio de la serie y luego pasa a ser ligramente peor.
+    \item  Para los países con encuestas de ingresos, el GNI tiene un comportamiento ligeramente mejor al principio de la serie y luego pasa a ser ligeramente peor.
     \item Para los países con encuestas de consumo, el GNI tiene un comportamiento mucho peor que para los que tienen encuestas de ingresos, y comparado con las demás métricas, aunque hay años en los que es superior, tiene un piso de predictividad notablemente menor y en general tiene un peor desempeño.
     \item El GNI per cápita corregido por desigualdad y el logaritmo de la mediana de los ingresos tienen un desempeño similar a las métricas propuestas.
     \item Se mantiene lo observado en las figuras anteriores, los cuantiles estimados con bootstrap se comprtan de forma similar a los datos observados.
@@ -122,12 +122,13 @@ Llegados a este punto, cabe observar que para el caso de la EVN, \ref{hipo:4} no
     \item No es consistentemente mejor que utilizar $BE_1$ o $BE_{GNI}$.
 \end{itemize}
 
-Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipótesis para otros conjuntos de datos, que es lo que haremos en la siguiente sección.
+Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipótesis para otros conjuntos de datos, que es lo que haremos en la sección \ref{section:otros_indicadores}
 
-\section{Otros indicadores}
+\section{Otros indicadores}\label{section:otros_indicadores}
 
-\subsection{Años esperados de educación}
+En esta sección buscaremos replicar los resultados obtenidos en \ref{section:esperanza_vida_nacer} utilizando otros indicadores. El objetivo es buscar posibles discrepancias, que de encontrarse enriqueserian este trabajo y de no encontrarse reforzarían lo observado anteriormente.
 
+\subsection{Años esperados de educación} 
 Podemos conjeturar que los años esperados de educación de una sociedad tienen una correlación positiva con los ingresos porque:
 
 \begin{itemize}

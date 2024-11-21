@@ -58,7 +58,7 @@ Esto nos permite formular la primera de las hipótesis del presente trabajo:
     \\
     Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,1)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $\exists N_0 / \forall N > N_0 $, $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$ para casi toda población $P$.
     
-    Para el intento de falsación empírica de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$    
+    Para el intento de falsación utilizando datos sinteticos de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$    
 %
 \end{hipotesis}
 
@@ -93,7 +93,7 @@ Lo primero que podemos pretender es generalizar \ref{hipo:1} para todos los valo
     \\
     Sea $P$ un conjunto de poblaciones, donde cada $P_i \in P$ es una población de $N$ individuos $P_{i,j}$ $(1 \leq j \leq N)$, con $P_{i,j}$ variables IID y $P_{i,j} \sim LN(0,\sigma^2)$, y sean $G_1, G_2$ tales que $G_1|N, G_2|N, G_1 < G_2$, entonces $\exists N_0 / \forall N > N_0 $, $Pearson(BE_{G_1},BE_N) < Pearson(BE_{G_2},BE_N)$ para casi toda población $P$
     
-    Para la falsación empírica de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$  
+    Para la falsación utilizando datos sinteticos de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$  
 \end{hipotesis}
 
 Notar que la hipótesis \ref{hipo:2} es una generalización no trivial de \ref{hipo:1} ya que modificar el $\sigma^2$ tiene efectos no lineales en la distribución.
@@ -109,7 +109,7 @@ Como puede verse en la figura \ref{fig:4}, esta hipótesis generalizada también
 
 Algo que podemos notar observando \ref{fig:4} es que para varianzas altas la correlación lineal entre las granularidades bajas y la medición ideal es notablemente baja.
 
-Esto puede apreciarse mejor en \ref{fig:5} , donde podemos ver que mientras que $BE_1$ y $BE_N$ tienen una tendencia marcada para $\sigma^2=1$, para $\sigma^2=10$ se comportan como variables practicamente independientes.
+Esto puede apreciarse mejor en \ref{fig:5} , donde podemos ver que mientras que $BE_1$ y $BE_N$ tienen una tendencia marcada para $\sigma^2=1$, para $\sigma^2=10$ se comportan como variables prácticamente independientes.
 
 \begin{figure}[H]
     \centering 
@@ -139,7 +139,7 @@ Lo observado en \ref{fig:4} y \ref{fig:5} nos puede llevar a proponer una hipót
     Entonces, $\exists N_0/ \forall N > N_0, $ $Pearson_P(BE_{G_1},BE_{G_2}) > Pearson_Q(BE_{G_1}, BE_{G_2})$, $\forall G_1, G_2 (G_1 \neq G_2)$ y para casi toda tupla $(P,Q)$.
     
 
-    Para la falsación empírica de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$
+    Para la falsación utilizando datos sinteticos de esta hipótesis, es necesaria la hipótesis auxiliar de $N_0 \leq 1.000.000$
 \end{hipotesis}
 
 Sorprendentemente, la hipótesis \ref{hipo:3} resulta ser inverosímil con los datos, como puede verse en la figura \ref{fig:12}, y también lo es si cambiamos $Pearson_P(BE_{G_1},BE_{G_2}) > Pearson_Q(BE_{G_1}, BE_{G_2})$ por $Spearman_P(BE_{G_1},BE_{G_2}) > Spearman_Q(BE_{G_1}, BE_{G_2})$, como puede verse en \ref{fig:13}

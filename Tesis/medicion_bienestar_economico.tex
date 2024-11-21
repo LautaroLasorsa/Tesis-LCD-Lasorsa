@@ -10,7 +10,7 @@ En este trabajo definiremos el bienestar económico (BE) de un individuo como la
 
 Sea $W$ el nivel de ingresos de un individuo, modelamos la utilidad que obtiene de esos ingresos como $U = log(W)$. Entonces, $BE = U(W) = log(W)$
 
-Es importante tener presente que si bien al definirlo como $BE = log(W)$ estamos dando una definición constructiva que nos permite calcularlo a partir de los datos recabados, está es una aproximación que realizamos al concepto en base al comportamiento que esperamos que tenga:
+Es importante tener presente que si bien al definirlo como $BE = log(W)$ estamos dando una definición constructiva que nos permite calcularlo a partir de los datos recabados, esta es una aproximación que realizamos al concepto en base al comportamiento que esperamos que tenga:
 
 \begin{itemize}
     \item \textbf{Es creciente}: Esperamos que un mayor ingreso cause un mayor bienestar económico en el inviduo que lo recibe. Formalmente, $W_1 \geq W_2 \rightarrow U(W_1) \geq U(W_2)$
@@ -49,7 +49,7 @@ De estos dos puntos, el presente trabajo propone posibles mejoras sobre el segun
 
 La medición actual del $BE$, utilizada por ejemplo por el \textbf{Índice de Desarrollo Humano} \cite{undp2023tech_notes} (HDI por sus siglas en inglés, Human Development Index), es mediante el logaritmo del promedio de los íngresos.
 
-En el caso puntual del HDI utiliza como insumo el GNI (Gross Domestic Income, Ingreso Nacional Bruto) a Paridad de Poder Adquisitivo (PPA, PPP en inglés). Es decir:
+En el caso puntual del HDI utiliza como insumo el GNI (Gross National Income, Ingreso Nacional Bruto) a Paridad de Poder Adquisitivo (PPA, PPP en inglés). Es decir:
 
 $$
     HDI_{income} = min(1, \frac{ln(GNI\ per\ capita) - ln(100)}{ln(75000)-ln(100)})
@@ -66,9 +66,11 @@ $$
 La principal ventaja de este método es a nivel logístico, dado que calcula el $BE$ en base a una colección de datos que pueden ser calculados o estimados de forma independiente:
 
 \begin{itemize}
-    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive es posible calcular de forma separada el GNI nomial y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monterio de los bienes y servicios. 
+    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive es posible calcular de forma separada el GNI nomial (*) y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monterio (*) de los bienes y servicios. 
     \item \textbf{Población}: La población de esa economía durante ese año. Usualmente se utiliza la cantidad de población a mitad del año.
 \end{itemize}
+
+(*) El termino nominal hace referencia a que se tienen en cuenta los precios a los que se efectua la transacción y no el valor de los bienes y servicios vendidos. Por ejemplo, si a nuestra canasta de bienes y servicios de referencia le asignamos un valor de 100.000 pesos, pero alguien la adquiere por 75.000 pesos, el valor nominal (monetario) de la transacción es de 75.000 pesos, mientras que el valor PPP (también llamado valor real) es de 100.000 pesos.
 
 Al estar estas métricas (GNI, deflactor, población) ya calculadas por tener interés en sí mismas, no supone una dificultad adicional obtener esta métrica derivada. Adicionalmente, es una metodología confiable ya que su confianza se deriva de la confianza que tenemos en la capacidad de medir las métricas base.
 
@@ -142,9 +144,11 @@ $$
 
 Así, si el GNI PPP per cápita de un país en el año 2024 fue $X$, su puntaje de ingresos para el $HDI$ sería $ HDI_{income} = min(1, \frac{(log(X)-log(100))}{(log(75000)-log(100))})$, y su puntaje de ingresos para el $IHDI$ sería $IHDI_{income} = (1-A_{income}) * HDI_{income}$
 
-El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exógena) de la misma y no como una consecuencia natural (endógena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos.
+El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exógena) de la misma y no como una consecuencia natural (endógena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos. 
 
-Generalizando, esta genera una métrica tal que :
+Es decir, en lugar de que en una sociedad con los mismos ingresos per cápita pero mayor desegiualdad el bienestar económico promedio sea menor y eso se vea reflejado en la métrica, sino que la métrica asigna un menor puntaje a una sociedad por el solo hecho de ser más desigual.
+
+Generalizando esta métrica, obtenemos la siguiente aproximación al bienestar económico:
 
 $$
     BE_I(X) = \frac{\sqrt[N]{\prod_{i=1}^NX_i}}{\frac{1}{N} * \sum_{i=1}^N X_i} * log(\frac{1}{N} * \sum_{i=1}^{N}X_i)
@@ -154,7 +158,7 @@ $$
 
 \section{Medición alternativa actual: Mediana de los ingresos}
 
-Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este indicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de a aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
+Una alternativa para aportar robustez es utilizar la mediana de los ingresos en vez de la media. El problema de este indicador es que descarta demasiada información de la muestra. Dada una distribución del ingreso, cualquier modificación en los ingresos de aquellos que están por sobre la mediana de los ingresos será ignorada por el indicador, así como cualquier modificación de aquellos que tienen menos ingresos que no sea lo suficientemente significativa para llevarlos a un nivel de ingresos superior a la mediana actual.
 
 Generalizando, esto resulta en:
 
@@ -176,7 +180,7 @@ $$
 
 \subsection{Ventajas}
 
-Es la medición exacta de la definición que propusimos de Bienestar Económico. Por tanto, es la mejor aproximación a dicho concepto. Lo que tiene especial sentido si pensamos que los ingresos son un instrumento para obtener bienestar y no el bienestar en sí mismo, y eso es lo que se busca reflejar al aplicarles una función de utilidad distinta de la identidad.
+La ventaja más evidente de esta metodología es que la misma es la medición exacta de la definición que propusimos de Bienestar Económico. Por tanto, es la mejor aproximación a dicho concepto. Lo que tiene especial sentido si pensamos que los ingresos son un instrumento para obtener bienestar y no el bienestar en sí mismo, y eso es lo que se busca reflejar al aplicarles una función de utilidad distinta de la identidad.
 
 
 Adicionalmente, al contemplar que un aumento en los ingresos de individuos que ya tienen altos ingresos les genera un menor beneficio marginal que aumentar en la misma cantidad absoluta los ingresos de individuos de menores ingresos, esta métrica refleja la eficiencia de la distribución del ingreso en una sociedad.

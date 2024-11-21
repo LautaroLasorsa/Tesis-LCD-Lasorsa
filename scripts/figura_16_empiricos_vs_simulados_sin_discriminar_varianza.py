@@ -77,12 +77,12 @@ ax.set_yticks( yticks,
         fontsize=19, minor = False)
 #ax.set_yticks(np.linspace(0,1,21), minor=True)
 ax.legend(fontsize=24, loc=(-0.005,-0.25), ncols=4)
-ax.set_xlabel("Número de Grupos", fontsize=24)
+ax.set_xlabel("Número de Grupos (X)", fontsize=24)
 ax.grid(linewidth=4, which="major")
 ax.grid(linewidth=2, which="minor")
 
 
-ax.set_ylabel("Correlación vs 100 grupos", fontsize=24)
-fig.suptitle("Correlación vs tomar 100 grupos", fontsize=48)
+ax.set_ylabel("Correlación BE_{X} y BE_{100}", fontsize=24)
+fig.suptitle("Correlación BE_{X} y BE_{100}", fontsize=48)
 
 SaveFig(fig)
