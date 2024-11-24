@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {2.5}Propuesta de mejora: Medición ideal}{6}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Metodología}{6}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Ventajas}{6}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Desventajas}{6}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.3}Desventajas}{7}{subsection.2.5.3}%
 \contentsline {section}{\numberline {2.6}Propuesta de mejora: Mediciones aproximadas}{7}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Metodología}{7}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Ventajas}{7}{subsection.2.6.2}%
@@ -38,7 +38,7 @@
 \contentsline {chapter}{\numberline {6.}Datos reales: Mejora de la capacidad predictiva}{21}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Hipótesis}{21}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Esperanza de Vida al Nacer (EVN)}{21}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Otros indicadores}{29}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Otros indicadores}{28}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Años esperados de educación}{29}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Suscripciones de celular cada 100 habitantes}{29}{subsection.6.3.2}%
 \contentsline {chapter}{\numberline {7.}Conclusiones}{32}{chapter.7}%
