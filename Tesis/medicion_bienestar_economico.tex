@@ -34,14 +34,14 @@ La correcta medición del bienestar económico tiene diversas motivaciones, como
 
 De estas motivaciones puede deducirse que tiene tanto un valor intrínseco (por si mismo) como un valor instrumental, y que en conjunto vuelven a la correcta medición de este concepto un asunto de interés.
 
-Notar que al ser un concepto al cuál aproximamos con una definición constructiva, hay 2 aspectos independientes:
+Notar que al ser un concepto al cual aproximamos con una definición constructiva, hay 2 aspectos independientes:
 
 \begin{itemize}
     \item La calidad de la implementación que realicemos, es decir, qué tan bien captura la definición objetivamente medible las expectativas que tenemos sobre el concepto.
     \item La calidad de la medición de esta implementación.
 \end{itemize}
 
-De estos dos puntos, el presente trabajo propone posibles mejoras sobre el segundo, basándose en la definición empírica ya explicada. Sin embargo, al estudiar la correlación entre el bienestar económico y otras variables, ambos puntos tendrán impacto aunque solo el segundo se estudie explicitamente.
+De estos dos puntos, el presente trabajo propone posibles mejoras sobre el segundo, basándose en la definición empírica ya explicada. Sin embargo, al estudiar la correlación entre el bienestar económico y otras variables, ambos puntos tendrán impacto aunque solo el segundo se estudie explícitamente.
 
 \section{Medición actual}
 
@@ -66,11 +66,11 @@ $$
 La principal ventaja de este método es a nivel logístico, dado que calcula el $BE$ en base a una colección de datos que pueden ser calculados o estimados de forma independiente:
 
 \begin{itemize}
-    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive es posible calcular de forma separada el GNI nomial (*) y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monterio (*) de los bienes y servicios. 
+    \item \textbf{GNI PPP}: El ingreso total de los individuos del país, deflactado a la paridad de poder adquisitivo. Inclusive es posible calcular de forma separada el GNI nominal (*) y el deflactor de PPP, pero también hay metodologías que apuntan directamente al valor GNI PPP utilizando cantidades en vez del valor monetario (*) de los bienes y servicios. 
     \item \textbf{Población}: La población de esa economía durante ese año. Usualmente se utiliza la cantidad de población a mitad del año.
 \end{itemize}
 
-(*) El termino nominal hace referencia a que se tienen en cuenta los precios a los que se efectua la transacción y no el valor de los bienes y servicios vendidos. Por ejemplo, si a nuestra canasta de bienes y servicios de referencia le asignamos un valor de 100.000 pesos, pero alguien la adquiere por 75.000 pesos, el valor nominal (monetario) de la transacción es de 75.000 pesos, mientras que el valor PPP (también llamado valor real) es de 100.000 pesos.
+(*) El término nominal hace referencia a que se tienen en cuenta los precios a los que se efectúa la transacción y no el valor de los bienes y servicios vendidos. Por ejemplo, si a nuestra canasta de bienes y servicios de referencia le asignamos un valor de 100.000 pesos, pero alguien la adquiere por 75.000 pesos, el valor nominal (monetario) de la transacción es de 75.000 pesos, mientras que el valor PPP (también llamado valor real) es de 100.000 pesos.
 
 Al estar estas métricas (GNI, deflactor, población) ya calculadas por tener interés en sí mismas, no supone una dificultad adicional obtener esta métrica derivada. Adicionalmente, es una metodología confiable ya que su confianza se deriva de la confianza que tenemos en la capacidad de medir las métricas base.
 
@@ -133,7 +133,7 @@ Hay un primer problema que podemos observar en esta metodología y es que el GNI
 
 Sin embargo, hay otro problema que en principio es más importante a tener en cuenta. La utilidad marginal decreciente se aplica en los ingresos de cada individuo y no en los ingresos agregados de la sociedad. Por tanto, es importante aplicar la función de utilidad ($U$, en este caso $log$) a los ingresos de cada individuo y no al promedio de los ingresos. Y lo importante es que \textbf{el logaritmo del promedio no es el promedio de los logaritmos}
 
-Es esta última desventaja la que este trabajo busca subsanar proponiendo una medición alternativa, y a su vez evaluar que mejoras ofrece dicha alternativa frente a la metodogía actual.
+Es esta última desventaja la que este trabajo busca subsanar proponiendo una medición alternativa, y a su vez evaluar qué mejoras ofrece dicha alternativa frente a la metodogía actual.
 
 \section{Medición alternativa actual: Corrección por desigualdad}
 
@@ -146,7 +146,7 @@ Así, si el GNI PPP per cápita de un país en el año 2024 fue $X$, su puntaje 
 
 El principal problema achacable a esta métrica es que la penalización de la desigualdad surge de la propia definición (exógena) de la misma y no como una consecuencia natural (endógena) de las ineficiencias que esta causa en la economía y en el bienestar de los inidividuos. 
 
-Es decir, en lugar de que en una sociedad con los mismos ingresos per cápita pero mayor desegiualdad el bienestar económico promedio sea menor y eso se vea reflejado en la métrica, sino que la métrica asigna un menor puntaje a una sociedad por el solo hecho de ser más desigual.
+Es decir, en lugar de que en una sociedad con los mismos ingresos per cápita pero mayor desigualdad el bienestar económico promedio sea menor y eso se vea reflejado en la métrica, sino que la métrica asigna un menor puntaje a una sociedad por el solo hecho de ser más desigual.
 
 Generalizando esta métrica, obtenemos la siguiente aproximación al bienestar económico:
 
@@ -185,11 +185,11 @@ La ventaja más evidente de esta metodología es que la misma es la medición ex
 
 Adicionalmente, al contemplar que un aumento en los ingresos de individuos que ya tienen altos ingresos les genera un menor beneficio marginal que aumentar en la misma cantidad absoluta los ingresos de individuos de menores ingresos, esta métrica refleja la eficiencia de la distribución del ingreso en una sociedad.
 
-De esta forma, esta metrica premia simultaneamente un aumento de la productividad de una economía como una distribución más eficiente de la misma.
+De esta forma, esta métrica premia simultaneamente un aumento de la productividad de una economía como una distribución más eficiente de la misma.
 
 \subsection{Desventajas}
 
-La principal desventaja de esta metodología es la contracara de la ventaja de la metodología actual, la logística. En este caso llega al punto de la infactibilidad, puesto que para poder realizar el cálculo propuesto es necesario conocer los ingresos de cada uno de los individuos, algo que es logisticamente imposible.
+La principal desventaja de esta metodología es la contracara de la ventaja de la metodología actual, la logística. En este caso llega al punto de la infactibilidad, puesto que para poder realizar el cálculo propuesto es necesario conocer los ingresos de cada uno de los individuos, algo que es logísticamente imposible.
 
 \section{Propuesta de mejora: Mediciones aproximadas}
 
@@ -212,13 +212,13 @@ De esta definición se pueden reescribir la medición actual, utilizando el prom
 Esta metodología tiene, parcialmente, las ventajas tanto de la metodología ideal propuesta como de la metodología actual:
 
 \begin{itemize}
-    \item $\exists G>1$ para el cuál la metodología es logisitcamente factible. Puede calcularse en base a encuestas de ingresos como la EPH (Encuesta Permanente de Hogares).
-    \item Modera más que $BE_1$ el impacto de los outliers (ultra ricos) en la medición del bienestar económico, ya que solo impactan de forma líneal en el último de los $G$ grupos en los que se divide la población.
+    \item $\exists G>1$ para el cual la metodología es logísticamente factible. Puede calcularse en base a encuestas de ingresos como la EPH (Encuesta Permanente de Hogares).
+    \item Modera más que $BE_1$ el impacto de los outliers en la medición del bienestar económico, ya que solo impactan de forma lineal en el último de los $G$ grupos en los que se divide la población.
 \end{itemize}
 
 \subsection{Desventajas}
 
-Tiene la desventaja de ser una solución de compromiso, y justamente parte del interés de este trabajo es ver, para valores logisticamente factibles de $G$, cuál es la diferencia entre $BE_G$ y $BE_N$.
+Tiene la desventaja de ser una solución de compromiso, y justamente parte del interés de este trabajo es ver, para valores logísticamente factibles de $G$, cuál es la diferencia entre $BE_G$ y $BE_N$.
 
 \section{Consideraciones generales}
 

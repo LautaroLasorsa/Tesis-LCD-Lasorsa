@@ -10,7 +10,7 @@ $$
     r(X,Y) = \frac{Cov(X,Y)}{\sigma_X * \sigma_Y}
 $$
 
-Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_Y$ son los desvios estandar de las mismas. Este indicador tiene varias propiedades interesantes:
+Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_Y$ son los desvíos estandar de las mismas. Este indicador tiene varias propiedades interesantes:
 
 \begin{itemize}
     \item Si planteamos el modelo $Y = \alpha * X + \beta$, para los valores $\alpha*$ y $\beta*$ que minimizan el MSE (Mean Square Error):
@@ -23,7 +23,7 @@ Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_
     \item Podemos tratar a $L^2$ (variables aleatorias con segundo momento finito) como un espacio vectorial euclídeo donde:
         \begin{itemize}
             \item $Cov(X,Y)$ es el producto interno entre $X$ e $Y$
-            \item $Var(X) = Cov(X,X)$ es la norma cuadrada de $X$. Analogamente, $std(X) = \sigma_X = ||X||$
+            \item $Var(X) = Cov(X,X)$ es la norma cuadrada de $X$. Análogamente, $std(X) = \sigma_X = ||X||$
             \item $ r(X,Y) = \frac{<X,Y>}{||X|| * ||Y||} $ es el coseno del ángulo entre $X$ e $Y$.
         \end{itemize}
 
@@ -33,7 +33,7 @@ Donde $Cov(X,Y)$ es la covarianza entre ambas variables, y $\sigma_X$ y $\sigma_
 
 \section{Correlaciones no lineales}
 
-Notar que la correlación de Pearson solo captura relaciones lineales entre las variables, y si quieremos capturar otras posibles relaciones (por ejemplo, $Y = log(X)$) corresponde utilizar otras métricas, como son la correlación de Spearman y la $\tau$ de Kendall.
+Notar que la correlación de Pearson solo captura relaciones lineales entre las variables, y si queremos capturar otras posibles relaciones (por ejemplo, $Y = log(X)$) corresponde utilizar otras métricas, como son la correlación de Spearman y la $\tau$ de Kendall.
 
 \subsection{Correlación de Spearman}
 
@@ -64,9 +64,9 @@ $$
 
 \section{Bootstrap}
 
-Bootstrap es una técnica que consiste en utilizar los datos de una muestra para estimar la distribución de la misma, en base a esa estimación generar datos sínteticos y estudiar sobre esos datos sinteticos la distribución del indicador de interes.
+Bootstrap es una técnica que consiste en utilizar los datos de una muestra para estimar la distribución de la misma, en base a esa estimación generar datos sintéticos y estudiar sobre esos datos sintéticos la distribución del indicador de interés.
 
-En el caso de este trabajo se utilizará bootstrap no parámetrico de la siguiente forma:
+En el caso de este trabajo se utilizará bootstrap no paramétrico de la siguiente forma:
 
 Dada una muestra $M$ de $N$ individuos $M_1, M_2, \dots, M_N$, una nueva muestra se generará tomando $N$ elementos de $M$ con reposición (es decir, al seleccionar un elemento de $M$ para incluirlo en nuestra nueva muestra, no lo eliminamos de $M$), y aplicamos el indicador (por ejemplo, la correlación entre 2 dimensiones de los individuos) a la población simulada. 
 

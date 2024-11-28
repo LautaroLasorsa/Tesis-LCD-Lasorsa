@@ -1,5 +1,5 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1.}Medición del Bienestar Ecónomico}{1}{}%
+\contentsline {chapter}{\numberline {1.}Medición del Bienestar Económico}{1}{}%
 \contentsline {section}{\numberline {1.1}Definición y motivación}{1}{}%
 \contentsline {section}{\numberline {1.2}Medición actual}{1}{}%
 \contentsline {section}{\numberline {1.3}Propuesta de mejora: Medición ideal}{1}{}%

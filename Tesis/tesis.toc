@@ -32,17 +32,17 @@
 \contentsline {subsection}{\numberline {4.3.1}Comportamiento condicional}{12}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Interacción con granularidad}{15}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Comportamiento no condicional}{16}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5.}Datos reales: Distribución de los ingresos}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Datos disponibles}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Distribución empírica}{18}{section.5.2}%
-\contentsline {chapter}{\numberline {6.}Datos reales: Mejora de la capacidad predictiva}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Hipótesis}{21}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Esperanza de Vida al Nacer (EVN)}{21}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Otros indicadores}{28}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Años esperados de educación}{29}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Suscripciones de celular cada 100 habitantes}{29}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7.}Conclusiones}{32}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Conclusión principal}{32}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}Otras conclusiones}{32}{subsection.7.0.2}%
-\contentsline {subsection}{\numberline {7.0.3}Falsación de las hipótesis}{32}{subsection.7.0.3}%
-\contentsline {chapter}{\numberline {8.}Posibles trabajos futuros}{33}{chapter.8}%
+\contentsline {chapter}{\numberline {5.}Datos reales: Distribución de los ingresos}{18}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datos disponibles}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Distribución empírica}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {6.}Datos reales: Mejora de la capacidad predictiva}{22}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Hipótesis}{22}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Esperanza de Vida al Nacer (EVN)}{22}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Otros indicadores}{30}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Años esperados de educación}{30}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Suscripciones de celular cada 100 habitantes}{30}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7.}Conclusiones}{33}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Conclusión principal}{33}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Otras conclusiones}{33}{subsection.7.0.2}%
+\contentsline {subsection}{\numberline {7.0.3}Falsación de las hipótesis}{33}{subsection.7.0.3}%
+\contentsline {chapter}{\numberline {8.}Posibles trabajos futuros}{34}{chapter.8}%

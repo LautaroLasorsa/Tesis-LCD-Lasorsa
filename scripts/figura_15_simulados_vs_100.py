@@ -40,7 +40,7 @@ ax.grid(linewidth=4, which="major")
 ax.grid(linewidth=2, which="minor")
 
 
-ax.set_ylabel("Correlación BE_{X} y BE_{100}", fontsize=24)
-fig.suptitle("Correlación BE_{X} y BE_{100}", fontsize=48)
+ax.set_ylabel("Correlación $BE_{X}$ y $BE_{100}$", fontsize=24)
+fig.suptitle("Correlación $BE_{X}$ y $BE_{100}$", fontsize=48)
 
 SaveFig(fig)

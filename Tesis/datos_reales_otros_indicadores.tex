@@ -1,6 +1,6 @@
 \chapter{Datos reales: Mejora de la capacidad predictiva} \label{chapter:datos_reales_otros_indicadores}
 
-En este capítulo exploramos si las modificaciones propuestas en la medición del bienestar económico mejoran la capacidad de predicir otros indicadores socio económicos.
+En este capítulo exploramos si las modificaciones propuestas en la medición del bienestar económico mejoran la capacidad de predecir otros indicadores socio económicos.
 
 \section{Hipótesis}
 
@@ -8,7 +8,7 @@ El objetivo del presente capítulo es intentar falsear \ref{hipo:4} utilizando d
 
 \begin{hipotesis}[Mejora del indicador]\label{hipo:4}
     \\
-    Sea una métrica $M$ relacionada con el bienestar económico, la correlación entre $B_{100}$ y $M$ será mayor que entre las mediciones de menor granulariad $BE_{GNI}, BE_1, BE_5, BE_{10}$ con $M$, y también que la correlación entre $M$ y las mediciones alternativas existentes, $BE_I$ y $BE_M$
+    Sea una métrica $M$ relacionada con el bienestar económico, la correlación entre $B_{100}$ y $M$ será mayor que entre las mediciones de menor granulariad $BE_{GNI}, BE_1, BE_5, BE_{10}$ con $M$, y también que la correlación entre $M$ y las mediciones alternativas existentes, $BE_I$ y $BE_M$.
 \end{hipotesis}
 
 
@@ -33,13 +33,13 @@ Por esto, vamos a comparar la correlación de los indicadores actualmente existe
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_6_pearson_ingreso_consumo_esp_vida_total.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles}
+    \caption{Correlación de Pearson entre utilizar 1, 5 y 10 grupos frente a usar 100 grupos en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.). }
     \label{fig:6} % Etiqueta para referenciar
 \end{figure}
 
 Como puede verse en \ref{fig:6}, la capacidad predictiva de los ingresos empeora en los últimos años, mientras que la del consumo mejora. A su vez, el beneficio de mejorar la granularidad parece agotarse al pasar de 1 a 5 grupos, ya que tomar quintiles, deciles o percentiles da un resultado similar.
 
-A su vez, podemos utilizar bootstrap no parámetrico para estimar la varianza que tendría esta correlación en base a la muestra dada, como puede verse en \ref{fig:7}, de la cual podemos extraer dos primeras observaciones importantes:
+A su vez, podemos utilizar bootstrap no paramétrico para estimar la varianza que tendría esta correlación en base a la muestra dada, como puede verse en \ref{fig:7}, de la cual podemos extraer dos primeras observaciones importantes:
 
 \begin{itemize}
     \item Utilizando las muestras de ingreso el rango inter-cuartílico de los indicadores es mucho menor.
@@ -49,7 +49,7 @@ A su vez, podemos utilizar bootstrap no parámetrico para estimar la varianza qu
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_7_pearson_ingreso_consumo_esp_vida_total_bootstrap.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
+    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$). El sombreado es el rango inter cuartílico estimado por bootstrap, y las líneas punteadas que lo delimitan son los cuartiles 1 y 3. La línea gruesa es la mediana estimada.}
     \label{fig:7} % Etiqueta para referenciar
 \end{figure}
 
@@ -58,7 +58,7 @@ Como puede observarse en \ref{fig:8} y \ref{fig:9}, lo dicho anteriormente se pr
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_8_ingresos_evn_no_lineal.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empricos, condicionadas por año, para las muestras de ingresos. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
+    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionadas por año, para las muestras de ingresos. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$). El sombreado es el rango inter cuartílico estimado por bootstrap, y las líneas punteadas que lo delimitan son los cuartiles 1 y 3. La línea gruesa es la mediana estimada.}
     \label{fig:8} % Etiqueta para referenciar
 \end{figure}
 
@@ -67,7 +67,7 @@ Como puede observarse en \ref{fig:8} y \ref{fig:9}, lo dicho anteriormente se pr
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_9_consumo_evn_no_lineal.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionadas por año, para las muestras de consumo. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
+    \caption{Correlaciones de Spearman y Kendall entre utilizar 1, 5, 10 y 100 grupos y la EVN en los datos empíricos, condicionadas por año, para las muestras de consumo. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$). El sombreado es el rango inter cuartílico estimado por bootstrap, y las líneas punteadas que lo delimitan son los cuartiles 1 y 3. La línea gruesa es la mediana estimada.}
     \label{fig:9} % Etiqueta para referenciar
 \end{figure}
 
@@ -78,21 +78,23 @@ Lo que puede apreciarse en \ref{fig:19} y \ref{fig:20} es que, comparando las m�
     \item  Para los países con encuestas de ingresos, el GNI tiene un comportamiento ligeramente mejor al principio de la serie y luego pasa a ser ligeramente peor.
     \item Para los países con encuestas de consumo, el GNI tiene un comportamiento mucho peor que para los que tienen encuestas de ingresos, y comparado con las demás métricas, aunque hay años en los que es superior, tiene un piso de predictividad notablemente menor y en general tiene un peor desempeño.
     \item El GNI per cápita corregido por desigualdad y el logaritmo de la mediana de los ingresos tienen un desempeño similar a las métricas propuestas.
-    \item Se mantiene lo observado en las figuras anteriores, los cuantiles estimados con bootstrap se comprtan de forma similar a los datos observados.
+    \item Se mantiene lo observado en las figuras anteriores, los cuantiles estimados con bootstrap se comportan de forma similar a los datos observados.
 \end{itemize}
 
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_19_empirico_todas_metricas_vs_evn_pearson.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre  utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
+    \caption{Correlación de Pearson entre  utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.).
+    }
     \label{fig:19} % Etiqueta para referenciar
 \end{figure}
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_20_empirico_todas_metricas_vs_evn_pearson_bootstrap.png} % Cambia el nombre del archivo
-    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional}
+    \caption{Correlación de Pearson entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionado por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles y utilizando bootstrap no paramétrico con 1.000 remuestreos para estimar el rango inter-cuartílico condicional. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.). El sombreado es el rango inter cuartílico estimado por bootstrap, y las líneas punteadas que lo delimitan son los cuartiles 1 y 3. La línea gruesa es la mediana estimada.
+    }
     \label{fig:20} % Etiqueta para referenciar
 \end{figure}
 
@@ -109,7 +111,8 @@ En \ref{fig:21} puede verse que los comportamientos antes descriptos se conserva
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth]{../figuras/figura_21_empirico_todas_metricas_vs_evn_spearman.png} % Cambia el nombre del archivo
-    \caption{Correlación de Spearman entre entre entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles.}
+    \caption{Correlación de Spearman entre utilizar 1, 5, 10 y 100 grupos, el GNI PC, el GNI PC corregido y la mediana de los ingresos y la EVN en los datos empíricos, condicionada por año y tipo de encuesta. Solo para los años con al menos 20 países disponibles. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la EVN y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.)
+}
     \label{fig:21} % Etiqueta para referenciar
 \end{figure}
 
@@ -126,13 +129,13 @@ Sin embargo, esto no implica que no haya riqueza en explorar esta misma hipótes
 
 \section{Otros indicadores}\label{section:otros_indicadores}
 
-En esta sección buscaremos replicar los resultados obtenidos en \ref{section:esperanza_vida_nacer} utilizando otros indicadores. El objetivo es buscar posibles discrepancias, que de encontrarse enriqueserian este trabajo y de no encontrarse reforzarían lo observado anteriormente.
+En esta sección buscaremos replicar los resultados obtenidos en \ref{section:esperanza_vida_nacer} utilizando otros indicadores. El objetivo es buscar posibles discrepancias, que de encontrarse enriquecerían este trabajo y de no encontrarse reforzarían lo observado anteriormente.
 
 \subsection{Años esperados de educación} 
 Podemos conjeturar que los años esperados de educación de una sociedad tienen una correlación positiva con los ingresos porque:
 
 \begin{itemize}
-    \item La ya estudiada ecuación de Mincer (Mincer, 1958) \cite{mincer1958investment}: $$ ln(w) = \beta_0 + \beta_1 * educacion + \beta_2 * experiencia + \beta_3 * experiencia^2$$
+    \item La ya estudiada ecuación de Mincer (Mincer, 1958) \cite{mincer1958investment}: $$ ln(w) = \beta_0 + \beta_1 * educación + \beta_2 * experiencia + \beta_3 * experiencia^2$$
     \item Familias con mayores ingresos pueden destinar más recursos a la educación de sus hijos, y pueden postergar más el ingreso de los mismos al mercado laboral.  
 \end{itemize}
 
@@ -152,12 +155,12 @@ Lo llamativo que podemos observar en \ref{fig:23} es que, no solo el $BE_{GNI}$ 
 
 En las muestras de consumo se puede observar una estabilización alrededor de 0.5, y aunque hay una caída en la correlación al pasar los años, esta es mucho menos marcada. En cambio, en el caso de las encuestas de ingresos, se llega al punto de tener correlación negativa entre ambas variables (es decir, en los datos de 2021, un menor bienestar económico se asocia ligeramente a más líneas de telefonía celular).
 
-Esta diferencia en las dinámicas es llamativa, y dispara preguntas que exceden el alcanza de esta tesis.
+Esta diferencia en las dinámicas es llamativa, y dispara preguntas que exceden el alcance de esta tesis.
 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_22_empirico_todas_vs_educacion.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y los años de educación esperados. \cite{worldbank_gender_data}}
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y los años de educación esperados. \cite{worldbank_gender_data}. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre los años esperados de educación y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.)}
     \label{fig:22} % Etiqueta para referenciar
 \end{figure}
 
@@ -165,6 +168,6 @@ Esta diferencia en las dinámicas es llamativa, y dispara preguntas que exceden 
 \begin{figure}[H] % 'h' significa que intenta colocar la figura aquí
     \centering % Centra la figura
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio ]{../figuras/figura_23_empirico_todas_vs_celulares.png} % Cambia el nombre del archivo
-    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y la cantidad de suscripciones de telefonía móvil cada 100 habitantes. \cite{worldbank_gender_data}}
+    \caption{Correlaciones de Pearson y Spearman entre las mediciones del bienestar económico estudiadas y la cantidad de suscripciones de telefonía móvil cada 100 habitantes. \cite{worldbank_gender_data}. El valor en el eje Y refleja la correlación, para los países con datos disponibles en el año indicado por el eje X, entre la suscripción a telefonía celular y la métrica indicada por el nombre de la serie (es decir, $BE_1$, $BE_5$, $BE_{10}$ y $BE_{100}$, etc.)}
     \label{fig:23} % Etiqueta para referenciar
 \end{figure}

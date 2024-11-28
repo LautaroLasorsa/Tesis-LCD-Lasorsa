@@ -63,9 +63,9 @@ for ax in axs:
     ax.legend(fontsize=24)
     ax.set_xlabel("Número de Grupos (X)", fontsize=24)
     ax.grid(linewidth=3)
-axs[0].set_ylabel("Pearson entre BE_{X} y BE_{100}", fontsize=24)
-axs[1].set_ylabel("Spearman entre BE_{X} y BE_{100}", fontsize=24)
-fig.suptitle("Correlación entre BE_{X} y BE_{100}", fontsize=48)
+axs[0].set_ylabel("Pearson entre $BE_{X}$ y $BE_{100}$", fontsize=24)
+axs[1].set_ylabel("Spearman entre $BE_{X}$ y $BE_{100}$", fontsize=24)
+fig.suptitle("Correlación entre $BE_{X}$ y $BE_{100}$", fontsize=48)
 fig.subplots_adjust(top=0.93) 
 
 fig.savefig("../figuras/figura_14_correlacion_vs_100_empirica.png",bbox_inches='tight')
